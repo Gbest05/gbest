@@ -91,8 +91,14 @@ $activeAdminNav = $activeAdminNav ?? 'dashboard';
 
       <div class="admin-sidebar-footer">
         <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
-          <div style="width: 36px; height: 36px; border-radius: 50%; background: var(--grad-primary); display: flex; align-items: center; justify-content: center; font-weight: 700; color: #FFFFFF; flex-shrink: 0;">
-            <?php echo substr($adminUser['name'], 0, 1); ?>
+          <div style="width: 38px; height: 38px; border-radius: 50%; overflow: hidden; border: 2px solid var(--accent-purple); flex-shrink: 0; display: flex; align-items: center; justify-content: center; background: var(--bg-surface-elevated);">
+            <?php if (!empty($siteConfig['profile_image']) && file_exists(dirname(__DIR__, 2) . '/' . $siteConfig['profile_image'])): ?>
+              <img src="../<?php echo htmlspecialchars($siteConfig['profile_image']); ?>?v=<?php echo filemtime(dirname(__DIR__, 2) . '/' . $siteConfig['profile_image']); ?>" alt="<?php echo htmlspecialchars($adminUser['name']); ?>" style="width: 100%; height: 100%; object-fit: cover;">
+            <?php else: ?>
+              <div style="width: 100%; height: 100%; background: var(--grad-primary); display: flex; align-items: center; justify-content: center; font-weight: 700; color: #FFFFFF;">
+                <?php echo substr($adminUser['name'], 0, 1); ?>
+              </div>
+            <?php endif; ?>
           </div>
           <div style="overflow: hidden;">
             <div style="font-size: 0.875rem; font-weight: 700; white-space: nowrap; text-overflow: ellipsis; color: var(--text-primary);"><?php echo htmlspecialchars($adminUser['name']); ?></div>

@@ -9,10 +9,87 @@ $activeAdminNav = 'dashboard';
 
 require_once __DIR__ . '/includes/header.php';
 
+$alertMessage = '';
+$alertType = 'success';
+
+// Handle Direct Profile Picture Upload from Dashboard
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['action'] === 'quick_upload_profile') {
+    if (isset($_FILES['profile_avatar']) && $_FILES['profile_avatar']['error'] === UPLOAD_ERR_OK) {
+        $uploadResult = handle_file_upload($_FILES['profile_avatar'], 'brand');
+        if ($uploadResult['status'] === 'success') {
+            $siteConfig['profile_image'] = $uploadResult['path'];
+            if (save_site_config($siteConfig)) {
+                $alertMessage = 'Profile picture successfully uploaded and updated across the portfolio!';
+                $alertType = 'success';
+            } else {
+                $alertMessage = 'Image uploaded but failed to update site config JSON.';
+                $alertType = 'error';
+            }
+        } else {
+            $alertMessage = 'Profile image upload failed: ' . $uploadResult['message'];
+            $alertType = 'error';
+        }
+    } else {
+        $alertMessage = 'Please select a valid image file to upload.';
+        $alertType = 'error';
+    }
+}
+
 $projects = get_projects();
 $graphics = get_graphics();
 $messages = get_messages();
 ?>
+
+<?php if (!empty($alertMessage)): ?>
+  <div class="<?php echo $alertType === 'success' ? 'admin-alert-success' : 'admin-alert-error'; ?>" style="margin-bottom: 1.5rem;">
+    <i class="fa-solid <?php echo $alertType === 'success' ? 'fa-circle-check' : 'fa-circle-exclamation'; ?>"></i>
+    <span><?php echo htmlspecialchars($alertMessage); ?></span>
+  </div>
+<?php endif; ?>
+
+<!-- Admin Profile Header Banner & Quick Avatar Uploader -->
+<div class="admin-card" style="background: linear-gradient(135deg, var(--bg-surface) 0%, var(--bg-surface-elevated) 100%); border: 1px solid var(--border-color); margin-bottom: 1.75rem; padding: clamp(1.25rem, 3vw, 1.75rem);">
+  <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem;">
+    <!-- Profile Info & Avatar Preview -->
+    <div style="display: flex; align-items: center; gap: 1.25rem; flex-wrap: wrap;">
+      <div style="position: relative; width: 78px; height: 78px; border-radius: 50%; padding: 3px; background: var(--grad-primary); box-shadow: 0 4px 15px rgba(139, 92, 246, 0.35); flex-shrink: 0;">
+        <div style="width: 100%; height: 100%; border-radius: 50%; overflow: hidden; background: var(--bg-surface); display: flex; align-items: center; justify-content: center;">
+          <?php if (!empty($siteConfig['profile_image']) && file_exists(dirname(__DIR__) . '/' . $siteConfig['profile_image'])): ?>
+            <img src="../<?php echo htmlspecialchars($siteConfig['profile_image']); ?>?v=<?php echo filemtime(dirname(__DIR__) . '/' . $siteConfig['profile_image']); ?>" alt="<?php echo htmlspecialchars($siteConfig['owner_name']); ?>" style="width: 100%; height: 100%; object-fit: cover;">
+          <?php else: ?>
+            <span style="font-size: 1.8rem; font-weight: 800; color: var(--accent-purple);"><?php echo substr($adminUser['name'], 0, 1); ?></span>
+          <?php endif; ?>
+        </div>
+      </div>
+
+      <div>
+        <div style="display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;">
+          <h2 style="font-size: clamp(1.25rem, 3vw, 1.5rem); font-weight: 800; margin: 0; color: var(--text-primary);"><?php echo htmlspecialchars($siteConfig['owner_name']); ?></h2>
+          <span class="badge-tag" style="font-size: 0.6875rem; padding: 0.15rem 0.55rem; margin: 0;">Super Administrator</span>
+        </div>
+        <p style="font-size: 0.875rem; color: var(--text-secondary); margin: 0.25rem 0 0.5rem 0;"><?php echo htmlspecialchars($siteConfig['professional_title']); ?></p>
+        <span style="font-size: 0.75rem; color: var(--text-muted);"><i class="fa-solid fa-camera" style="margin-right: 4px;"></i> Current Avatar: <code><?php echo htmlspecialchars($siteConfig['profile_image']); ?></code></span>
+      </div>
+    </div>
+
+    <!-- Quick Photo Upload Form -->
+    <div style="background: var(--bg-surface); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 1rem 1.25rem; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+      <form method="POST" action="index.php" enctype="multipart/form-data" style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
+        <input type="hidden" name="action" value="quick_upload_profile">
+        <div>
+          <label class="form-label" style="font-size: 0.8125rem; margin-bottom: 0.35rem; display: block;">
+            <i class="fa-solid fa-cloud-arrow-up" style="color: var(--accent-cyan); margin-right: 4px;"></i> <strong>Upload New Profile Picture</strong>
+          </label>
+          <input type="file" name="profile_avatar" class="form-input" accept="image/*" required style="padding: 0.35rem 0.6rem; font-size: 0.8125rem; max-width: 240px;">
+        </div>
+        <button type="submit" class="btn btn-primary btn-sm" style="align-self: flex-end; height: 38px;">
+          <i class="fa-solid fa-upload"></i>
+          <span>Save Photo</span>
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
 
 <!-- Metric Stats Overview -->
 <div class="admin-stats-grid">
@@ -62,7 +139,7 @@ $messages = get_messages();
   <div class="admin-card-header">
     <h2 class="admin-card-title"><i class="fa-solid fa-bolt" style="color: var(--accent-amber); margin-right: 8px;"></i> Quick Actions</h2>
   </div>
-  <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+  <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
     <a href="projects.php?action=new" class="btn btn-primary btn-sm">
       <i class="fa-solid fa-plus"></i>
       <span>Add New Project / Web Work</span>
