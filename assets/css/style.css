@@ -471,6 +471,7 @@ button, input, textarea, select {
 }
 
 /* Page Hero Banner with Dynamic Background Image */
+body > main > section.page-hero-banner,
 .page-hero-banner {
   position: relative;
   padding-top: clamp(4.5rem, 8vw, 5.75rem);
@@ -479,9 +480,13 @@ button, input, textarea, select {
   background-position: center center;
   background-repeat: no-repeat;
   overflow: hidden;
-  border-bottom: none !important;
+  border: none !important;
+  border-bottom: 0 !important;
+  outline: none !important;
+  box-shadow: none !important;
 }
 
+body > main > section.page-hero-banner::before,
 .page-hero-banner::before {
   content: '';
   position: absolute;
@@ -491,17 +496,32 @@ button, input, textarea, select {
   -webkit-backdrop-filter: blur(2px);
   z-index: 1;
   pointer-events: none;
+  border: none !important;
 }
 
+[data-theme="light"] body > main > section.page-hero-banner,
 [data-theme="light"] .page-hero-banner {
   background-color: #F8FAFC;
-  border-bottom: none !important;
+  border: none !important;
+  border-bottom: 0 !important;
+  outline: none !important;
+  box-shadow: none !important;
 }
 
+[data-theme="light"] body > main > section.page-hero-banner::before,
 [data-theme="light"] .page-hero-banner::before {
   background: linear-gradient(180deg, rgba(248, 250, 252, 0.82) 0%, rgba(248, 250, 252, 0.92) 65%, #F8FAFC 100%);
   backdrop-filter: blur(1px);
   -webkit-backdrop-filter: blur(1px);
+  border: none !important;
+}
+
+/* Ensure next section following hero banner has zero border-top */
+body > main > section.page-hero-banner + section,
+.page-hero-banner + section {
+  border-top: 0 !important;
+  outline: none !important;
+  box-shadow: none !important;
 }
 
 .page-hero-banner .container {

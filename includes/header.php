@@ -15,7 +15,7 @@ $pageTitle = $pageTitle ?? ($siteConfig['owner_name'] . ' | ' . $siteConfig['pro
 $pageDescription = $pageDescription ?? ($siteConfig['tagline'] . ' ' . $siteConfig['hero_description']);
 ?>
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -36,7 +36,7 @@ $pageDescription = $pageDescription ?? ($siteConfig['tagline'] . ' ' . $siteConf
   <meta property="og:image" content="<?php echo htmlspecialchars($siteConfig['profile_image'], ENT_QUOTES, 'UTF-8'); ?>">
 
   <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="<?php echo htmlspecialchars($siteConfig['logo_image'], ENT_QUOTES, 'UTF-8'); ?>">
+  <link rel="icon" type="image/svg+xml" href="<?php echo htmlspecialchars($siteConfig['logo_image'], ENT_QUOTES, 'UTF-8'); ?>?v=<?php echo time(); ?>">
 
   <!-- Google Fonts: Space Grotesk, Syne, Plus Jakarta Sans, JetBrains Mono -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -47,8 +47,11 @@ $pageDescription = $pageDescription ?? ($siteConfig['tagline'] . ' ' . $siteConf
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <!-- Main Stylesheets -->
-  <link rel="stylesheet" href="assets/css/style.css">
-  <link rel="stylesheet" href="assets/css/animations.css">
+  <link rel="stylesheet" href="assets/css/style.css?v=<?php echo time(); ?>">
+  <link rel="stylesheet" href="assets/css/animations.css?v=<?php echo time(); ?>">
+
+  <!-- Global Theme Toggle Engine -->
+  <script src="assets/js/theme.js"></script>
 </head>
 <body>
 

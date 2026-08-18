@@ -15,6 +15,5 @@
   <g opacity="0.12" stroke="#8B5CF6" stroke-width="1.2" fill="none">
     <circle cx="960" cy="200" r="220" stroke-dasharray="8 6"/>
     <circle cx="960" cy="200" r="340" stroke-dasharray="4 8"/>
-    <line x1="200" y1="300" x2="1720" y2="300"/>
   </g>
 </svg>
