@@ -1,0 +1,42 @@
+{
+  "brand_name": "GBEST",
+  "brand_tagline": "GBTech Solutions",
+  "brand_badge": "GB",
+  "owner_name": "Gbolahan Alade",
+  "professional_title": "Graphics Designer • Web Developer • AI Enthusiast",
+  "tagline": "Designing Ideas. Building Technology. Creating Impact.",
+  "hero_badge": "Available for Freelance & Tech Opportunities",
+  "hero_title_prefix": "Hi, I'm",
+  "hero_description": "Designing Ideas. Building Technology. Creating Impact. I bridge the gap between creative visual design, robust full-stack software development, and intelligent AI architectures.",
+  "typewriter_roles": [
+    "Graphics Designer",
+    "Web Developer",
+    "AI Enthusiast",
+    "Software Developer",
+    "Creative Technologist"
+  ],
+  "profile_image": "assets/images/profile.svg",
+  "logo_image": "assets/images/icons/favicon.svg",
+  "about_bio_1": "I am Gbolahan Alade, a technology professional and creator operating under the brand GBEST / GBTech. My work stands at the intersection of high-impact visual design, full-stack web architecture, and emerging Artificial Intelligence.",
+  "about_bio_2": "With extensive experience spanning brand identity design, responsive web development, REST API systems, and Machine Learning models, I specialize in building solutions that are not only visually captivating but engineered for speed, scalability, and measurable real-world utility.",
+  "stats": {
+    "projects_completed": "45",
+    "technologies": "20",
+    "years_experience": "4",
+    "happy_clients": "35"
+  },
+  "contact": {
+    "email": "alade.gbolahan@gbest.tech",
+    "phone": "+2348000000000",
+    "phone_display": "+234 (Available on WhatsApp)",
+    "location": "Nigeria (Available for Global Remote)",
+    "whatsapp_url": "https://wa.me/2348000000000"
+  },
+  "socials": {
+    "github": "https://github.com/",
+    "linkedin": "https://linkedin.com/",
+    "twitter": "https://x.com/",
+    "instagram": "https://instagram.com/",
+    "facebook": "https://facebook.com/"
+  }
+}

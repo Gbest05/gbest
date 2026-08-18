@@ -1,0 +1,161 @@
+[
+    {
+        "id": "proj_6a8455f7cce2a",
+        "title": "Health-Record website",
+        "category": "web",
+        "category_label": "Full-Stack web",
+        "description": "It is use in the hospitals",
+        "technologies": [
+            "PHP and PostgreSQL"
+        ],
+        "image": "assets/images/uploads/projects/upload_6a8455f7ca3f53.08454108.jpg",
+        "demo_url": "health-record-production.up.railway.app",
+        "github_url": "",
+        "featured": false,
+        "created_at": "2026-08-18"
+    },
+    {
+        "id": "proj_1",
+        "title": "SIWES Allocation System",
+        "category": "web",
+        "category_label": "Web • System",
+        "description": "A centralized institutional web platform for managing student SIWES placement, automated industry supervisor matching, verification, and performance logs.",
+        "technologies": [
+            "PHP",
+            "PostgreSQL",
+            "JavaScript",
+            "Bootstrap 5"
+        ],
+        "image": "assets/images/projects/siwes-system.svg",
+        "demo_url": "webdev.php",
+        "github_url": "https://github.com/",
+        "featured": true,
+        "created_at": "2026-01-15"
+    },
+    {
+        "id": "proj_2",
+        "title": "Health Record Management System",
+        "category": "web",
+        "category_label": "HealthTech • Web",
+        "description": "A digital hospital EMR platform for encrypting patient clinical records, tracking diagnostic vitals telemetry, appointments, and prescription charting.",
+        "technologies": [
+            "PHP 8+",
+            "PostgreSQL",
+            "REST APIs",
+            "AES-256"
+        ],
+        "image": "assets/images/projects/health-records.svg",
+        "demo_url": "webdev.php",
+        "github_url": "https://github.com/",
+        "featured": true,
+        "created_at": "2026-02-10"
+    },
+    {
+        "id": "proj_3",
+        "title": "Intelligent Departmental Chatbot",
+        "category": "ai",
+        "category_label": "AI • Chatbot",
+        "description": "An AI-powered conversational chatbot assisting undergraduate students with instant departmental course requisites, timetables, and academic calendar queries.",
+        "technologies": [
+            "Python",
+            "NLP",
+            "Flask API",
+            "JavaScript"
+        ],
+        "image": "assets/images/projects/dept-chatbot.svg",
+        "demo_url": "ai.php",
+        "github_url": "https://github.com/",
+        "featured": true,
+        "created_at": "2026-03-05"
+    },
+    {
+        "id": "proj_4",
+        "title": "Student Performance Predictor",
+        "category": "ai",
+        "category_label": "AI • Analytics",
+        "description": "An intelligent predictive ML model utilizing historical continuous assessment metrics, attendance, and LMS analytics to forecast graduation grade outcomes.",
+        "technologies": [
+            "Scikit-Learn",
+            "Python",
+            "Pandas",
+            "Chart.js"
+        ],
+        "image": "assets/images/projects/student-predict.svg",
+        "demo_url": "ai.php",
+        "github_url": "https://github.com/",
+        "featured": true,
+        "created_at": "2026-04-12"
+    },
+    {
+        "id": "proj_5",
+        "title": "AI Diabetes Advisory Bot",
+        "category": "ai",
+        "category_label": "Health AI • NLP",
+        "description": "An AI-powered conversational health assistant offering clinical guidance, blood sugar log interpretation, and nutritional glycemic index advisories.",
+        "technologies": [
+            "NLP",
+            "Python",
+            "FastAPI",
+            "Tailwind"
+        ],
+        "image": "assets/images/projects/diabetes-bot.svg",
+        "demo_url": "ai.php",
+        "github_url": "https://github.com/",
+        "featured": true,
+        "created_at": "2026-05-20"
+    },
+    {
+        "id": "proj_6",
+        "title": "Intelligent Tutoring System (BERT)",
+        "category": "ai",
+        "category_label": "BERT • Deep NLP",
+        "description": "An advanced deep-learning educational platform leveraging BERT attention layers to understand complex student questions and generate contextualized answers.",
+        "technologies": [
+            "PyTorch",
+            "HuggingFace",
+            "BERT",
+            "Python"
+        ],
+        "image": "assets/images/projects/bert-tutoring.svg",
+        "demo_url": "ai.php",
+        "github_url": "https://github.com/",
+        "featured": true,
+        "created_at": "2026-06-18"
+    },
+    {
+        "id": "proj_7",
+        "title": "Smart Attendance System",
+        "category": "software",
+        "category_label": "Vision • Biometric",
+        "description": "A contactless facial recognition attendance platform that captures live video streams, identifies enrolled students, and logs presence automatically into the database.",
+        "technologies": [
+            "OpenCV",
+            "FaceNet",
+            "PostgreSQL",
+            "Python"
+        ],
+        "image": "assets/images/projects/smart-attendance.svg",
+        "demo_url": "projects.php",
+        "github_url": "https://github.com/",
+        "featured": true,
+        "created_at": "2026-07-08"
+    },
+    {
+        "id": "proj_8",
+        "title": "AI Text Detection System",
+        "category": "ai",
+        "category_label": "AI • Linguistics",
+        "description": "A linguistic forensic classifier analyzing perplexity and sentence burstiness distributions to accurately detect AI-synthesized content in academic documents.",
+        "technologies": [
+            "NLP Classifier",
+            "Python",
+            "JavaScript",
+            "Docker"
+        ],
+        "image": "assets/images/projects/ai-detection.svg",
+        "demo_url": "ai.php",
+        "github_url": "https://github.com/",
+        "featured": true,
+        "created_at": "2026-08-01"
+    }
+]

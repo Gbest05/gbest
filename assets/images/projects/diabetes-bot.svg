@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad5" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#08101E"/>
+      <stop offset="100%" stop-color="#03060C"/>
+    </linearGradient>
+    <linearGradient id="roseGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F43F5E"/>
+      <stop offset="100%" stop-color="#FB7185"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="500" fill="url(#bgGrad5)"/>
+
+  <!-- Chat Frame -->
+  <rect x="140" y="50" width="520" height="400" rx="18" fill="#0F172A" stroke="#1E293B" stroke-width="2"/>
+  
+  <!-- Header -->
+  <rect x="140" y="50" width="520" height="55" rx="18" fill="#1E293B"/>
+  <rect x="140" y="85" width="520" height="20" fill="#1E293B"/>
+  <circle cx="170" cy="77" r="16" fill="url(#roseGradient)"/>
+  <path d="M 165 77 L 175 77 M 170 72 L 170 82" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round"/>
+  <text x="198" y="74" fill="#FFFFFF" font-family="-apple-system, sans-serif" font-size="14" font-weight="700">GlucoCare AI • Diabetes Advisory Bot</text>
+  <text x="198" y="90" fill="#10B981" font-family="-apple-system, sans-serif" font-size="10">● Real-time Clinical NLP &amp; Dietary Guidance</text>
+
+  <!-- Message 1: User Log -->
+  <rect x="290" y="125" width="340" height="48" rx="12" fill="#0284C7"/>
+  <text x="305" y="146" fill="#FFFFFF" font-family="-apple-system, sans-serif" font-size="11">Fasting blood sugar is 145 mg/dL this morning.</text>
+  <text x="305" y="162" fill="#BAE6FD" font-family="-apple-system, sans-serif" font-size="10">Should I take my morning insulin dose as scheduled?</text>
+
+  <!-- Message 2: Bot Telemetry & Advice -->
+  <rect x="170" y="190" width="440" height="160" rx="14" fill="#1E293B" stroke="#334155" stroke-width="1"/>
+  <text x="190" y="215" fill="#F43F5E" font-family="-apple-system, sans-serif" font-size="11" font-weight="700">GLYCEMIC INDEX ANALYSIS (ELEVATED FASTING)</text>
+  
+  <!-- Mini Vitals Indicators -->
+  <rect x="190" y="230" width="125" height="35" rx="6" fill="#0F172A"/>
+  <text x="200" y="246" fill="#94A3B8" font-family="-apple-system, sans-serif" font-size="9">Current Level</text>
+  <text x="200" y="259" fill="#FB7185" font-family="-apple-system, sans-serif" font-size="11" font-weight="700">145 mg/dL (High)</text>
+
+  <rect x="325" y="230" width="125" height="35" rx="6" fill="#0F172A"/>
+  <text x="335" y="246" fill="#94A3B8" font-family="-apple-system, sans-serif" font-size="9">Target Range</text>
+  <text x="335" y="259" fill="#10B981" font-family="-apple-system, sans-serif" font-size="11" font-weight="700">80 - 130 mg/dL</text>
+
+  <text x="190" y="285" fill="#E2E8F0" font-family="-apple-system, sans-serif" font-size="11">Recommendation:</text>
+  <text x="190" y="303" fill="#94A3B8" font-family="-apple-system, sans-serif" font-size="10">1. Administer basal insulin as prescribed by your physician.</text>
+  <text x="190" y="320" fill="#94A3B8" font-family="-apple-system, sans-serif" font-size="10">2. Pair breakfast with high fiber (e.g. oats, boiled eggs) to avoid spike.</text>
+  <text x="190" y="337" fill="#64748B" font-family="-apple-system, sans-serif" font-size="9">⚠️ AI Advisory note: Consult clinical physician for emergency dosages.</text>
+
+  <!-- Input -->
+  <rect x="165" y="375" width="470" height="48" rx="10" fill="#0B1120" stroke="#334155" stroke-width="1"/>
+  <text x="185" y="404" fill="#64748B" font-family="-apple-system, sans-serif" font-size="12">Ask GlucoCare AI about meals, carbs, or vitals...</text>
+</svg>

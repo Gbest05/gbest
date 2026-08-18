@@ -1,0 +1,77 @@
+{
+  "home": {
+    "hero_bg_image": "assets/images/hero-bgs/home-hero.svg",
+    "badge": "Available for Freelance & Tech Opportunities",
+    "title_prefix": "Hi, I'm",
+    "title_name": "Gbolahan Alade",
+    "description": "Designing Ideas. Building Technology. Creating Impact. I bridge the gap between creative visual design, robust full-stack software development, and intelligent AI architectures.",
+    "cta_primary_text": "Explore Projects",
+    "cta_primary_url": "#projects",
+    "cta_secondary_text": "Get In Touch",
+    "cta_secondary_url": "#contact"
+  },
+  "about": {
+    "hero_bg_image": "assets/images/hero-bgs/about-hero.svg",
+    "badge": "Who I Am",
+    "title": "About Gbolahan Alade",
+    "subtitle": "Creative Technologist uniting visual brand design, full-stack software development, and artificial intelligence.",
+    "story_heading": "Designing Ideas. Building Technology. Creating Impact.",
+    "bio_1": "I am Gbolahan Alade, a technology professional and creator operating under the brand GBEST / GBTech. My work stands at the intersection of high-impact visual design, full-stack web architecture, and emerging Artificial Intelligence.",
+    "bio_2": "With extensive experience spanning brand identity design, responsive web development, REST API systems, and Machine Learning models, I specialize in building solutions that are not only visually captivating but engineered for speed, scalability, and measurable real-world utility.",
+    "bio_3": "Whether designing high-conversion corporate brand identities, architecting database-driven web platforms, or training natural language processing models, my goal remains consistent: creating functional, beautiful, and intelligent solutions that solve complex problems."
+  },
+  "skills": {
+    "hero_bg_image": "assets/images/hero-bgs/skills-hero.svg",
+    "badge": "Technical Arsenal",
+    "title": "Skills & Technologies",
+    "subtitle": "A multi-disciplinary stack across graphic design, full-stack engineering, databases, DevOps, and machine learning."
+  },
+  "services": {
+    "hero_bg_image": "assets/images/hero-bgs/services-hero.svg",
+    "badge": "What I Deliver",
+    "title": "End-to-End Solutions & Services",
+    "subtitle": "From brand inception and full-stack software development to production machine learning deployments.",
+    "cta_heading": "Ready to Start Your Project?",
+    "cta_text": "Let's collaborate to build something outstanding that drives measurable growth for your brand or enterprise."
+  },
+  "projects": {
+    "hero_bg_image": "assets/images/hero-bgs/projects-hero.svg",
+    "badge": "Portfolio",
+    "title": "Featured Web & Software Projects",
+    "subtitle": "Explore real-world software applications, academic portals, full-stack systems, and machine learning models.",
+    "cta_heading": "Have a custom software requirement?",
+    "cta_text": "I design and build tailored digital products from scratch to deployment."
+  },
+  "graphics": {
+    "hero_bg_image": "assets/images/hero-bgs/graphics-hero.svg",
+    "badge": "Visual Artistry",
+    "title": "Graphics & Brand Design Portfolio",
+    "subtitle": "Promotional flyers, brand identities, typography posters, and social media creative campaigns. Click any artwork to view in high resolution.",
+    "cta_heading": "Need World-Class Branding or Flyers?",
+    "cta_text": "From logo design to complete corporate marketing kits, let's create visuals that elevate your brand."
+  },
+  "webdev": {
+    "hero_bg_image": "assets/images/hero-bgs/webdev-hero.svg",
+    "badge": "Engineering Standards",
+    "title": "Web Development & Software Engineering",
+    "subtitle": "Designing and deploying secure, responsive, database-driven web applications and scalable APIs.",
+    "cta_heading": "Looking for a Full-Stack Engineer?",
+    "cta_text": "Let's engineer a performant, high-security web application tailored to your business goals."
+  },
+  "ai": {
+    "hero_bg_image": "assets/images/hero-bgs/ai-hero.svg",
+    "badge": "Artificial Intelligence",
+    "title": "Deep Learning & Applied AI Systems",
+    "subtitle": "Building BERT NLP language models, neural network predictors, and intelligent conversational tools.",
+    "cta_heading": "Interested in integrating AI into your workflow?",
+    "cta_text": "From predictive analytics to custom NLP pipelines, let's discuss intelligent technology solutions."
+  },
+  "contact": {
+    "hero_bg_image": "assets/images/hero-bgs/contact-hero.svg",
+    "badge": "Get In Touch",
+    "title": "Let's Build Something Great Together",
+    "subtitle": "Have a project, idea, or technology collaboration in mind? Let's turn your vision into high-impact reality.",
+    "info_heading": "Contact Information",
+    "info_text": "Feel free to reach out directly via email, phone, or any of my social channels. I typically respond within 24 hours."
+  }
+}

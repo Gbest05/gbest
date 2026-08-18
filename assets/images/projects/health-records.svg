@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#080F1E"/>
+      <stop offset="100%" stop-color="#040710"/>
+    </linearGradient>
+    <linearGradient id="cyanTeal" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#06B6D4"/>
+      <stop offset="100%" stop-color="#10B981"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="500" fill="url(#bgGrad2)"/>
+  
+  <!-- Ambient Grid -->
+  <g opacity="0.12" stroke="#06B6D4" stroke-width="1">
+    <line x1="0" y1="125" x2="800" y2="125"/>
+    <line x1="0" y1="250" x2="800" y2="250"/>
+    <line x1="0" y1="375" x2="800" y2="375"/>
+    <line x1="200" y1="0" x2="200" y2="500"/>
+    <line x1="400" y1="0" x2="400" y2="500"/>
+    <line x1="600" y1="0" x2="600" y2="500"/>
+  </g>
+
+  <!-- Pulse EKG Line Graphic -->
+  <path d="M 0 420 L 180 420 L 210 380 L 230 460 L 260 360 L 285 435 L 305 420 L 800 420" fill="none" stroke="#06B6D4" stroke-width="2" opacity="0.4"/>
+
+  <!-- Main Portal Window -->
+  <rect x="70" y="55" width="660" height="390" rx="16" fill="#0D1527" stroke="#1E293B" stroke-width="2"/>
+  
+  <!-- Header -->
+  <rect x="70" y="55" width="660" height="46" rx="16" fill="#141E36"/>
+  <rect x="70" y="85" width="660" height="16" fill="#141E36"/>
+  <circle cx="96" cy="78" r="5" fill="#EF4444"/>
+  <circle cx="112" cy="78" r="5" fill="#F59E0B"/>
+  <circle cx="128" cy="78" r="5" fill="#10B981"/>
+  <text x="400" y="83" fill="#94A3B8" font-family="-apple-system, sans-serif" font-size="12" font-weight="600" text-anchor="middle">medicare-emr.health.cloud/patient-records</text>
+
+  <!-- Left Patient Quick Card -->
+  <rect x="95" y="120" width="220" height="300" rx="12" fill="#141E36" stroke="#233252" stroke-width="1"/>
+  <circle cx="205" cy="170" r="32" fill="url(#cyanTeal)"/>
+  <text x="205" y="176" fill="#FFFFFF" font-family="-apple-system, sans-serif" font-size="16" font-weight="700" text-anchor="middle">OA</text>
+  <text x="205" y="222" fill="#FFFFFF" font-family="-apple-system, sans-serif" font-size="14" font-weight="700" text-anchor="middle">Oluwaseun Adeleke</text>
+  <text x="205" y="240" fill="#06B6D4" font-family="-apple-system, sans-serif" font-size="11" text-anchor="middle">ID: #MED-94021 • Blood: O+</text>
+
+  <rect x="115" y="260" width="180" height="40" rx="8" fill="#1E2B4A"/>
+  <text x="130" y="278" fill="#94A3B8" font-family="-apple-system, sans-serif" font-size="10">Heart Rate</text>
+  <text x="130" y="293" fill="#10B981" font-family="-apple-system, sans-serif" font-size="13" font-weight="700">72 BPM (Normal)</text>
+
+  <rect x="115" y="310" width="180" height="40" rx="8" fill="#1E2B4A"/>
+  <text x="130" y="328" fill="#94A3B8" font-family="-apple-system, sans-serif" font-size="10">Blood Pressure</text>
+  <text x="130" y="343" fill="#06B6D4" font-family="-apple-system, sans-serif" font-size="13" font-weight="700">120/80 mmHg</text>
+
+  <rect x="115" y="360" width="180" height="40" rx="8" fill="#1E2B4A"/>
+  <text x="130" y="378" fill="#94A3B8" font-family="-apple-system, sans-serif" font-size="10">Encrypted Status</text>
+  <text x="130" y="393" fill="#8B5CF6" font-family="-apple-system, sans-serif" font-size="13" font-weight="700">AES-256 Verified</text>
+
+  <!-- Right Clinical History & Diagnostics -->
+  <text x="340" y="145" fill="#FFFFFF" font-family="-apple-system, sans-serif" font-size="18" font-weight="700">Electronic Health Records &amp; Medical History</text>
+  <text x="340" y="165" fill="#94A3B8" font-family="-apple-system, sans-serif" font-size="11">HIPAA compliant digital patient charting, vitals telemetry &amp; prescriptions</text>
+
+  <!-- Tabs -->
+  <rect x="340" y="185" width="100" height="28" rx="6" fill="#06B6D4"/>
+  <text x="390" y="203" fill="#080F1E" font-family="-apple-system, sans-serif" font-size="11" font-weight="700" text-anchor="middle">Vitals &amp; Labs</text>
+  <rect x="450" y="185" width="110" height="28" rx="6" fill="#1A2542"/>
+  <text x="505" y="203" fill="#94A3B8" font-family="-apple-system, sans-serif" font-size="11" font-weight="600" text-anchor="middle">Prescriptions</text>
+  <rect x="570" y="185" width="110" height="28" rx="6" fill="#1A2542"/>
+  <text x="625" y="203" fill="#94A3B8" font-family="-apple-system, sans-serif" font-size="11" font-weight="600" text-anchor="middle">Doctor Notes</text>
+
+  <!-- Records List -->
+  <rect x="340" y="230" width="365" height="60" rx="10" fill="#141E36" stroke="#233252" stroke-width="1"/>
+  <text x="360" y="255" fill="#FFFFFF" font-family="-apple-system, sans-serif" font-size="12" font-weight="700">Comprehensive Metabolic Panel (CMP)</text>
+  <text x="360" y="275" fill="#94A3B8" font-family="-apple-system, sans-serif" font-size="10">Dr. K. Ibrahim • Lab Results In-Range</text>
+  <rect x="620" y="248" width="65" height="22" rx="6" fill="#10B981" opacity="0.2"/>
+  <text x="652" y="263" fill="#10B981" font-family="-apple-system, sans-serif" font-size="10" font-weight="700" text-anchor="middle">NORMAL</text>
+
+  <rect x="340" y="305" width="365" height="60" rx="10" fill="#141E36" stroke="#233252" stroke-width="1"/>
+  <text x="360" y="330" fill="#FFFFFF" font-family="-apple-system, sans-serif" font-size="12" font-weight="700">Echocardiogram Telemetry Report</text>
+  <text x="360" y="350" fill="#94A3B8" font-family="-apple-system, sans-serif" font-size="10">Cardiac Diagnostics Wing • 2-year interval check</text>
+  <rect x="620" y="323" width="65" height="22" rx="6" fill="#06B6D4" opacity="0.2"/>
+  <text x="652" y="338" fill="#06B6D4" font-family="-apple-system, sans-serif" font-size="10" font-weight="700" text-anchor="middle">CLEARED</text>
+</svg>

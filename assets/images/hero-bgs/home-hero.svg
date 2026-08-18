@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="100%" height="100%">
+  <defs>
+    <radialGradient id="bgGrad" cx="50%" cy="30%" r="80%" fx="40%" fy="20%">
+      <stop offset="0%" stop-color="#1E1338"/>
+      <stop offset="45%" stop-color="#0E1428"/>
+      <stop offset="100%" stop-color="#080B12"/>
+    </radialGradient>
+    <radialGradient id="orbPurple" cx="25%" cy="35%" r="50%">
+      <stop offset="0%" stop-color="#8B5CF6" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#8B5CF6" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="orbCyan" cx="75%" cy="60%" r="50%">
+      <stop offset="0%" stop-color="#06B6D4" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#06B6D4" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="techGrid" width="60" height="60" patternUnits="userSpaceOnUse">
+      <path d="M 60 0 L 0 0 0 60" fill="none" stroke="rgba(255, 255, 255, 0.04)" stroke-width="1"/>
+      <circle cx="60" cy="60" r="1.5" fill="rgba(139, 92, 246, 0.25)"/>
+    </pattern>
+  </defs>
+  <rect width="1920" height="1080" fill="url(#bgGrad)"/>
+  <rect width="1920" height="1080" fill="url(#orbPurple)"/>
+  <rect width="1920" height="1080" fill="url(#orbCyan)"/>
+  <rect width="1920" height="1080" fill="url(#techGrid)"/>
+  <g opacity="0.15" stroke="#8B5CF6" stroke-width="1.5" fill="none">
+    <path d="M 100 200 L 400 200 L 550 350 L 900 350"/>
+    <circle cx="900" cy="350" r="4" fill="#06B6D4"/>
+    <path d="M 1400 150 L 1650 400 L 1850 400"/>
+    <circle cx="1400" cy="150" r="4" fill="#8B5CF6"/>
+    <path d="M 300 800 L 600 800 L 750 650 L 1100 650"/>
+    <circle cx="1100" cy="650" r="4" fill="#F59E0B"/>
+  </g>
+</svg>

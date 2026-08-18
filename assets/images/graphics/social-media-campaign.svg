@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 750" width="100%" height="100%">
+  <defs>
+    <linearGradient id="socialBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0E0720"/>
+      <stop offset="100%" stop-color="#05030B"/>
+    </linearGradient>
+    <linearGradient id="instaGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F59E0B"/>
+      <stop offset="50%" stop-color="#EC4899"/>
+      <stop offset="100%" stop-color="#8B5CF6"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="600" height="750" fill="url(#socialBg)"/>
+
+  <!-- Phone / Social Post Frame -->
+  <rect x="75" y="45" width="450" height="660" rx="30" fill="#131B2E" stroke="#253554" stroke-width="2"/>
+  
+  <!-- Post Header -->
+  <circle cx="120" cy="100" r="22" fill="url(#instaGrad)"/>
+  <text x="120" y="106" fill="#FFFFFF" font-family="'Syne', sans-serif" font-size="14" font-weight="800" text-anchor="middle">GB</text>
+  <text x="155" y="98" fill="#FFFFFF" font-family="-apple-system, sans-serif" font-size="14" font-weight="700">gbest_studios</text>
+  <text x="155" y="114" fill="#94A3B8" font-family="-apple-system, sans-serif" font-size="11">Sponsored • Creative Agency</text>
+
+  <!-- Post Visual Image Box -->
+  <rect x="95" y="140" width="410" height="380" rx="16" fill="#080C16"/>
+  <circle cx="300" cy="310" r="120" fill="url(#instaGrad)" opacity="0.8"/>
+  <circle cx="300" cy="310" r="85" fill="#080C16"/>
+  
+  <text x="300" y="295" fill="#06B6D4" font-family="'Syne', sans-serif" font-size="14" font-weight="700" text-anchor="middle" letter-spacing="3">UNLEASH YOUR</text>
+  <text x="300" y="335" fill="#FFFFFF" font-family="'Syne', sans-serif" font-size="28" font-weight="900" text-anchor="middle">DIGITAL VISION</text>
+
+  <!-- Post Actions -->
+  <g transform="translate(105, 540)">
+    <!-- Heart Icon -->
+    <path d="M 12 5 C 7 0, 0 4, 0 10 C 0 16, 12 24, 12 24 C 12 24, 24 16, 24 10 C 24 4, 17 0, 12 5 Z" fill="#EC4899"/>
+    <!-- Comment Icon -->
+    <circle cx="50" cy="12" r="10" fill="none" stroke="#94A3B8" stroke-width="2"/>
+    <!-- Share Icon -->
+    <path d="M 80 12 L 100 3 L 95 21 Z" fill="none" stroke="#94A3B8" stroke-width="2"/>
+  </g>
+
+  <text x="105" y="595" fill="#FFFFFF" font-family="-apple-system, sans-serif" font-size="13" font-weight="700">1,842 likes</text>
+  <text x="105" y="620" fill="#E2E8F0" font-family="-apple-system, sans-serif" font-size="12"><tspan font-weight="700">gbest_studios</tspan> Elevate your brand visuals with tailored design &amp; high-conversion web development. 🚀 #CreativeTech #BrandStrategy</text>
+
+  <!-- CTA Bar -->
+  <rect x="95" y="645" width="410" height="42" rx="10" fill="url(#instaGrad)"/>
+  <text x="300" y="671" fill="#FFFFFF" font-family="-apple-system, sans-serif" font-size="13" font-weight="800" text-anchor="middle">LEARN MORE &amp; BOOK CONSULTATION</text>
+</svg>

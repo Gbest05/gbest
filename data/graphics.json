@@ -1,0 +1,90 @@
+[
+    {
+        "id": "gfx_6a84565dded9d",
+        "title": "FLYER",
+        "category": "flyers",
+        "category_label": "",
+        "client": "God's Chosen cakes",
+        "description": "I nice flyer for a baker",
+        "image": "assets/images/uploads/graphics/upload_6a84565ddeae91.13615909.jpeg",
+        "featured": false,
+        "created_at": "2026-08-18"
+    },
+    {
+        "id": "gfx_1",
+        "title": "Global Tech Summit 2026",
+        "category": "flyers",
+        "category_label": "Event Flyer",
+        "description": "Keynote promotional flyer for the Global Tech Summit 2026 with neon gradients, 3D polygonal geometry, and typography.",
+        "client": "Global Tech Convention",
+        "image": "assets/images/graphics/flyer-tech-summit.svg",
+        "featured": true,
+        "created_at": "2026-02-14"
+    },
+    {
+        "id": "gfx_2",
+        "title": "GBEST Brand Identity",
+        "category": "branding",
+        "category_label": "Corporate Identity",
+        "description": "Full corporate brand identity guidelines for GBEST Technologies including isometric stationery and hex color tokens.",
+        "client": "GBEST Technologies",
+        "image": "assets/images/graphics/branding-brand-identity.svg",
+        "featured": true,
+        "created_at": "2026-03-01"
+    },
+    {
+        "id": "gfx_3",
+        "title": "Digital Vision Campaign",
+        "category": "social",
+        "category_label": "Social Media",
+        "description": "High-engagement social media advertising campaign visual crafted for agency client acquisition.",
+        "client": "Studio Pulse Digital",
+        "image": "assets/images/graphics/social-media-campaign.svg",
+        "featured": true,
+        "created_at": "2026-04-10"
+    },
+    {
+        "id": "gfx_4",
+        "title": "Neural Frontiers AI Poster",
+        "category": "posters",
+        "category_label": "Poster & Art",
+        "description": "Cybernetic aesthetic poster design for the Neural Frontiers International AI Symposium.",
+        "client": "AI Frontiers Academic Wing",
+        "image": "assets/images/graphics/poster-ai-conference.svg",
+        "featured": true,
+        "created_at": "2026-05-18"
+    },
+    {
+        "id": "gfx_5",
+        "title": "GBEST Monogram & Grid",
+        "category": "logos",
+        "category_label": "Logo Design",
+        "description": "Geometric grid construction and modern monogram logo design for GBEST Technologies.",
+        "client": "GBTech Innovation Labs",
+        "image": "assets/images/graphics/logo-gbest-tech.svg",
+        "featured": true,
+        "created_at": "2026-06-22"
+    },
+    {
+        "id": "gfx_6",
+        "title": "Annual Impact Report 2026",
+        "category": "business",
+        "category_label": "Business Editorial",
+        "description": "Editorial publication cover and infographic data dashboard for corporate annual financial reporting.",
+        "client": "GBEST Advisory Group",
+        "image": "assets/images/graphics/business-annual-report.svg",
+        "featured": true,
+        "created_at": "2026-07-15"
+    },
+    {
+        "id": "gfx_7",
+        "title": "Synthwave Nights 2026",
+        "category": "event",
+        "category_label": "Concert Flyer",
+        "description": "Vibrant rave synthwave concert poster with custom audio soundwave visualizer vectors.",
+        "client": "Echo Festival Events",
+        "image": "assets/images/graphics/event-music-fest.svg",
+        "featured": true,
+        "created_at": "2026-08-05"
+    }
+]

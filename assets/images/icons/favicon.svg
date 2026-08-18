@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100%" height="100%">
+  <defs>
+    <linearGradient id="favGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8B5CF6"/>
+      <stop offset="100%" stop-color="#06B6D4"/>
+    </linearGradient>
+  </defs>
+  <rect width="100" height="100" rx="26" fill="#080B12"/>
+  <rect x="6" y="6" width="88" height="88" rx="20" fill="none" stroke="url(#favGrad)" stroke-width="4"/>
+  <text x="50" y="66" fill="#FFFFFF" font-family="'Syne', sans-serif" font-size="44" font-weight="900" text-anchor="middle">G</text>
+  <circle cx="75" cy="28" r="8" fill="#06B6D4"/>
+</svg>

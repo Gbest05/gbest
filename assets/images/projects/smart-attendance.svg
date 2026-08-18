@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad7" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#080F18"/>
+      <stop offset="100%" stop-color="#04080D"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="500" fill="url(#bgGrad7)"/>
+
+  <!-- Main Screen -->
+  <rect x="90" y="55" width="620" height="390" rx="16" fill="#0E1624" stroke="#1F2E45" stroke-width="2"/>
+  
+  <!-- Header -->
+  <rect x="90" y="55" width="620" height="46" rx="16" fill="#142033"/>
+  <rect x="90" y="85" width="620" height="16" fill="#142033"/>
+  <circle cx="116" cy="78" r="5" fill="#EF4444"/>
+  <circle cx="132" cy="78" r="5" fill="#F59E0B"/>
+  <circle cx="148" cy="78" r="5" fill="#10B981"/>
+  <text x="400" y="83" fill="#94A3B8" font-family="-apple-system, sans-serif" font-size="12" font-weight="600" text-anchor="middle">vision-attendance.terminal.ai/live-feed</text>
+
+  <!-- Left: Live Computer Vision Camera Feed -->
+  <rect x="115" y="120" width="280" height="300" rx="12" fill="#070C14" stroke="#06B6D4" stroke-width="1.5"/>
+  
+  <!-- Face Recognition Bounding Box -->
+  <g transform="translate(190, 180)">
+    <!-- Face Silhouette Outline -->
+    <ellipse cx="65" cy="70" rx="45" ry="55" fill="none" stroke="#64748B" stroke-width="1.5" stroke-dasharray="4,4"/>
+    <circle cx="50" cy="55" r="4" fill="#06B6D4"/>
+    <circle cx="80" cy="55" r="4" fill="#06B6D4"/>
+    <path d="M 55 85 Q 65 95, 75 85" fill="none" stroke="#06B6D4" stroke-width="2"/>
+    
+    <!-- Neon Target Corners -->
+    <path d="M 5 20 L 5 5 L 20 5" fill="none" stroke="#10B981" stroke-width="3"/>
+    <path d="M 110 20 L 110 5 L 95 5" fill="none" stroke="#10B981" stroke-width="3"/>
+    <path d="M 5 120 L 5 135 L 20 135" fill="none" stroke="#10B981" stroke-width="3"/>
+    <path d="M 110 120 L 110 135 L 95 135" fill="none" stroke="#10B981" stroke-width="3"/>
+
+    <!-- Match Tag -->
+    <rect x="15" y="145" width="100" height="20" rx="4" fill="#10B981"/>
+    <text x="65" y="159" fill="#080F18" font-family="-apple-system, sans-serif" font-size="10" font-weight="800" text-anchor="middle">MATCH: 99.8%</text>
+  </g>
+
+  <rect x="130" y="135" width="80" height="20" rx="4" fill="#EF4444" opacity="0.9"/>
+  <text x="170" y="149" fill="#FFFFFF" font-family="-apple-system, sans-serif" font-size="9" font-weight="700" text-anchor="middle">● LIVE REC</text>
+
+  <!-- Right: Real-time Attendance Roster -->
+  <text x="420" y="145" fill="#FFFFFF" font-family="-apple-system, sans-serif" font-size="16" font-weight="700">Automated Biometric Logging</text>
+  <text x="420" y="165" fill="#94A3B8" font-family="-apple-system, sans-serif" font-size="11">OpenCV + FaceNet Deep Metric Learning</text>
+
+  <!-- Attendance Log Item 1 -->
+  <rect x="420" y="185" width="270" height="48" rx="8" fill="#142033" stroke="#25354F" stroke-width="1"/>
+  <circle cx="445" cy="209" r="14" fill="#8B5CF6"/>
+  <text x="445" y="213" fill="#FFFFFF" font-family="-apple-system, sans-serif" font-size="10" font-weight="700" text-anchor="middle">GA</text>
+  <text x="470" y="203" fill="#FFFFFF" font-family="-apple-system, sans-serif" font-size="11" font-weight="700">Gbolahan Alade</text>
+  <text x="470" y="218" fill="#94A3B8" font-family="-apple-system, sans-serif" font-size="9">CSC-19-4820 • 08:42:15 AM</text>
+  <rect x="625" y="198" width="55" height="20" rx="6" fill="#10B981" opacity="0.2"/>
+  <text x="652" y="212" fill="#10B981" font-family="-apple-system, sans-serif" font-size="9" font-weight="700" text-anchor="middle">PRESENT</text>
+
+  <!-- Attendance Log Item 2 -->
+  <rect x="420" y="243" width="270" height="48" rx="8" fill="#142033" stroke="#25354F" stroke-width="1"/>
+  <circle cx="445" cy="267" r="14" fill="#06B6D4"/>
+  <text x="445" y="271" fill="#FFFFFF" font-family="-apple-system, sans-serif" font-size="10" font-weight="700" text-anchor="middle">DB</text>
+  <text x="470" y="261" fill="#FFFFFF" font-family="-apple-system, sans-serif" font-size="11" font-weight="700">David Babatunde</text>
+  <text x="470" y="276" fill="#94A3B8" font-family="-apple-system, sans-serif" font-size="9">CSC-19-4829 • 08:43:02 AM</text>
+  <rect x="625" y="256" width="55" height="20" rx="6" fill="#10B981" opacity="0.2"/>
+  <text x="652" y="270" fill="#10B981" font-family="-apple-system, sans-serif" font-size="9" font-weight="700" text-anchor="middle">PRESENT</text>
+
+  <!-- Attendance Log Item 3 -->
+  <rect x="420" y="301" width="270" height="48" rx="8" fill="#142033" stroke="#25354F" stroke-width="1"/>
+  <circle cx="445" cy="325" r="14" fill="#EC4899"/>
+  <text x="445" y="329" fill="#FFFFFF" font-family="-apple-system, sans-serif" font-size="10" font-weight="700" text-anchor="middle">ZO</text>
+  <text x="470" y="319" fill="#FFFFFF" font-family="-apple-system, sans-serif" font-size="11" font-weight="700">Zainab Oladipo</text>
+  <text x="470" y="334" fill="#94A3B8" font-family="-apple-system, sans-serif" font-size="9">CSC-19-4835 • 08:44:19 AM</text>
+  <rect x="625" y="314" width="55" height="20" rx="6" fill="#10B981" opacity="0.2"/>
+  <text x="652" y="328" fill="#10B981" font-family="-apple-system, sans-serif" font-size="9" font-weight="700" text-anchor="middle">PRESENT</text>
+
+  <!-- Stats -->
+  <rect x="420" y="360" width="270" height="55" rx="8" fill="#070C14"/>
+  <text x="440" y="382" fill="#94A3B8" font-family="-apple-system, sans-serif" font-size="10">Class Attendance Rate</text>
+  <text x="440" y="402" fill="#06B6D4" font-family="-apple-system, sans-serif" font-size="16" font-weight="800">96.8% (124 / 128)</text>
+</svg>

@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad6" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0E1222"/>
+      <stop offset="100%" stop-color="#070913"/>
+    </linearGradient>
+    <linearGradient id="bertGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3B82F6"/>
+      <stop offset="100%" stop-color="#8B5CF6"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="500" fill="url(#bgGrad6)"/>
+
+  <!-- Main Container Card -->
+  <rect x="80" y="55" width="640" height="390" rx="16" fill="#121829" stroke="#222C44" stroke-width="2"/>
+  
+  <!-- Header -->
+  <rect x="80" y="55" width="640" height="48" rx="16" fill="#1A233A"/>
+  <rect x="80" y="87" width="640" height="16" fill="#1A233A"/>
+  <circle cx="106" cy="79" r="5" fill="#EF4444"/>
+  <circle cx="122" cy="79" r="5" fill="#F59E0B"/>
+  <circle cx="138" cy="79" r="5" fill="#10B981"/>
+  <text x="400" y="84" fill="#94A3B8" font-family="-apple-system, sans-serif" font-size="12" font-weight="600" text-anchor="middle">bert-transformer-tutor.edu.ai/interactive</text>
+
+  <!-- Left: BERT Attention Matrix Visualizer -->
+  <rect x="105" y="125" width="260" height="295" rx="12" fill="#172036" stroke="#273659" stroke-width="1"/>
+  <text x="125" y="152" fill="#8B5CF6" font-family="-apple-system, sans-serif" font-size="11" font-weight="700">MULTI-HEAD SELF-ATTENTION</text>
+  <text x="125" y="172" fill="#FFFFFF" font-family="-apple-system, sans-serif" font-size="14" font-weight="700">Transformer Layers (12-Head)</text>
+  
+  <!-- Attention Heatmap Matrix Grid -->
+  <g transform="translate(125, 190)">
+    <rect x="0" y="0" width="35" height="25" fill="#3B82F6" opacity="0.9"/>
+    <rect x="40" y="0" width="35" height="25" fill="#8B5CF6" opacity="0.4"/>
+    <rect x="80" y="0" width="35" height="25" fill="#8B5CF6" opacity="0.2"/>
+    <rect x="120" y="0" width="35" height="25" fill="#06B6D4" opacity="0.8"/>
+    <rect x="160" y="0" width="35" height="25" fill="#8B5CF6" opacity="0.6"/>
+
+    <rect x="0" y="30" width="35" height="25" fill="#8B5CF6" opacity="0.3"/>
+    <rect x="40" y="30" width="35" height="25" fill="#06B6D4" opacity="0.95"/>
+    <rect x="80" y="30" width="35" height="25" fill="#3B82F6" opacity="0.7"/>
+    <rect x="120" y="30" width="35" height="25" fill="#8B5CF6" opacity="0.3"/>
+    <rect x="160" y="30" width="35" height="25" fill="#8B5CF6" opacity="0.1"/>
+
+    <rect x="0" y="60" width="35" height="25" fill="#06B6D4" opacity="0.5"/>
+    <rect x="40" y="60" width="35" height="25" fill="#8B5CF6" opacity="0.2"/>
+    <rect x="80" y="60" width="35" height="25" fill="#3B82F6" opacity="0.85"/>
+    <rect x="120" y="60" width="35" height="25" fill="#8B5CF6" opacity="0.9"/>
+    <rect x="160" y="60" width="35" height="25" fill="#06B6D4" opacity="0.4"/>
+
+    <text x="0" y="110" fill="#94A3B8" font-family="-apple-system, sans-serif" font-size="10">BERT Bi-Directional Context Weights</text>
+  </g>
+
+  <rect x="125" y="355" width="220" height="45" rx="8" fill="#0E1424"/>
+  <text x="140" y="375" fill="#94A3B8" font-family="-apple-system, sans-serif" font-size="10">SQuAD Benchmark F1 Score</text>
+  <text x="140" y="392" fill="#10B981" font-family="-apple-system, sans-serif" font-size="14" font-weight="700">92.4% (Deep NLP Accuracy)</text>
+
+  <!-- Right: Adaptive Tutoring Dialogue -->
+  <rect x="385" y="125" width="310" height="295" rx="12" fill="#172036" stroke="#273659" stroke-width="1"/>
+  <text x="405" y="152" fill="#FFFFFF" font-family="-apple-system, sans-serif" font-size="14" font-weight="700">Intelligent Question &amp; Answer</text>
+  <text x="405" y="170" fill="#94A3B8" font-family="-apple-system, sans-serif" font-size="11">Concept extraction &amp; automated feedback</text>
+
+  <rect x="405" y="190" width="270" height="50" rx="10" fill="#202C48"/>
+  <text x="415" y="210" fill="#CBD5E1" font-family="-apple-system, sans-serif" font-size="10" font-weight="600">Student Question:</text>
+  <text x="415" y="228" fill="#FFFFFF" font-family="-apple-system, sans-serif" font-size="11">How does backpropagation update weights?</text>
+
+  <rect x="405" y="250" width="270" height="110" rx="10" fill="#202C48" stroke="#8B5CF6" stroke-width="1"/>
+  <text x="415" y="270" fill="#06B6D4" font-family="-apple-system, sans-serif" font-size="10" font-weight="700">BERT SYNTACTIC EXPLANATION</text>
+  <text x="415" y="290" fill="#E2E8F0" font-family="-apple-system, sans-serif" font-size="10">Backprop computes gradients of the loss</text>
+  <text x="415" y="306" fill="#E2E8F0" font-family="-apple-system, sans-serif" font-size="10">function via the chain rule, adjusting each</text>
+  <text x="415" y="322" fill="#E2E8F0" font-family="-apple-system, sans-serif" font-size="10">weight by: W = W - (learning_rate * dL/dW)</text>
+  <text x="415" y="345" fill="#10B981" font-family="-apple-system, sans-serif" font-size="10" font-weight="600">Adaptive Quiz Generated: 3 Questions</text>
+</svg>

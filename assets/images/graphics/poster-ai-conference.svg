@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 750" width="100%" height="100%">
+  <defs>
+    <linearGradient id="posterBg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#050B14"/>
+      <stop offset="100%" stop-color="#020408"/>
+    </linearGradient>
+    <linearGradient id="cyanViolet" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#06B6D4"/>
+      <stop offset="100%" stop-color="#8B5CF6"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="600" height="750" fill="url(#posterBg)"/>
+
+  <!-- Cybernetic / AI Neural Art -->
+  <circle cx="300" cy="300" r="180" fill="none" stroke="#1E293B" stroke-width="1"/>
+  <circle cx="300" cy="300" r="140" fill="none" stroke="#334155" stroke-width="1.5" stroke-dasharray="6,6"/>
+  <circle cx="300" cy="300" r="100" fill="none" stroke="#06B6D4" stroke-width="2"/>
+  <circle cx="300" cy="300" r="60" fill="url(#cyanViolet)" opacity="0.8"/>
+
+  <!-- Radiating Beam Rays -->
+  <line x1="300" y1="60" x2="300" y2="540" stroke="#06B6D4" stroke-width="1" opacity="0.3"/>
+  <line x1="60" y1="300" x2="540" y2="300" stroke="#8B5CF6" stroke-width="1" opacity="0.3"/>
+
+  <!-- Typography Layout -->
+  <text x="50" y="80" fill="#06B6D4" font-family="'Syne', sans-serif" font-size="13" font-weight="700" letter-spacing="4">INTERNATIONAL SYMPOSIUM</text>
+  <text x="550" y="80" fill="#94A3B8" font-family="-apple-system, sans-serif" font-size="12" text-anchor="end">EDITION XXIV</text>
+
+  <g transform="translate(50, 520)">
+    <text x="0" y="0" fill="#FFFFFF" font-family="'Syne', sans-serif" font-size="44" font-weight="900">NEURAL</text>
+    <text x="0" y="45" fill="url(#cyanViolet)" font-family="'Syne', sans-serif" font-size="44" font-weight="900">FRONTIERS</text>
+    <text x="0" y="85" fill="#CBD5E1" font-family="-apple-system, sans-serif" font-size="14">Deep Learning • Large Language Models • Autonomous Agents</text>
+  </g>
+
+  <!-- Bottom Details -->
+  <line x1="50" y1="640" x2="550" y2="640" stroke="#1E293B" stroke-width="1"/>
+  
+  <text x="50" y="675" fill="#FFFFFF" font-family="-apple-system, sans-serif" font-size="14" font-weight="700">NOVEMBER 18 - 20, 2026</text>
+  <text x="50" y="695" fill="#94A3B8" font-family="-apple-system, sans-serif" font-size="12">METROPOLITAN AUDITORIUM &amp; GLOBAL LIVESTREAM</text>
+
+  <text x="550" y="685" fill="#8B5CF6" font-family="'Syne', sans-serif" font-size="16" font-weight="800" text-anchor="end">AI-FRONTIERS.ORG</text>
+</svg>
