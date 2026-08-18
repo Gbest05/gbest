@@ -18,14 +18,15 @@ if (is_admin_logged_in()) {
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $username = trim($_POST['username'] ?? '');
+    $inputIdentifier = strtolower(trim($_POST['username'] ?? ''));
     $password = trim($_POST['password'] ?? '');
 
     $adminUser = get_admin_user();
+    $matchesUser = (strtolower($adminUser['username']) === $inputIdentifier || strtolower($adminUser['email']) === $inputIdentifier);
 
-    if ($username === $adminUser['username'] && password_verify($password, $adminUser['password_hash'])) {
+    if ($matchesUser && password_verify($password, $adminUser['password_hash'])) {
         $_SESSION['gbest_admin_auth'] = true;
-        $_SESSION['gbest_admin_user'] = $username;
+        $_SESSION['gbest_admin_user'] = $adminUser['username'];
         $_SESSION['gbest_admin_name'] = $adminUser['name'];
 
         $adminUser['last_login'] = date('Y-m-d H:i:s');
@@ -34,7 +35,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         header('Location: index.php');
         exit;
     } else {
-        $error = 'Invalid admin username or password. Please try again.';
+        $error = 'Invalid email/username or password. Please try again.';
     }
 }
 ?>
@@ -79,8 +80,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     <form method="POST" action="login.php" class="admin-login-form">
       <div class="form-group">
-        <label for="username" class="form-label"><i class="fa-solid fa-user" style="margin-right: 6px; color: var(--accent-cyan);"></i> Username</label>
-        <input type="text" id="username" name="username" class="form-input" placeholder="admin" required autofocus value="<?php echo htmlspecialchars($_POST['username'] ?? ''); ?>" style="padding: 0.65rem 0.95rem;">
+        <label for="username" class="form-label"><i class="fa-solid fa-user" style="margin-right: 6px; color: var(--accent-cyan);"></i> Email or Username</label>
+        <input type="text" id="username" name="username" class="form-input" placeholder="Gbestdev05@gmail.com" required autofocus value="<?php echo htmlspecialchars($_POST['username'] ?? ''); ?>" style="padding: 0.65rem 0.95rem;">
       </div>
 
       <div class="form-group">

@@ -277,10 +277,11 @@ button, input, textarea, select {
 }
 
 [data-theme="light"] .animated-gradient-text {
-  background: linear-gradient(135deg, #4F46E5 0%, #0284C7 50%, #D97706 100%);
-  background-size: 200% auto;
+  background: linear-gradient(135deg, #DC2626 0%, #F59E0B 35%, #EF4444 70%, #FBBF24 100%);
+  background-size: 300% 300%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  animation: gradientShift 6s ease infinite;
 }
 
 .section-title {

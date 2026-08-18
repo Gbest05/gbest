@@ -102,6 +102,14 @@
   animation: gradientShift 8s ease infinite;
 }
 
+[data-theme="light"] .animated-gradient-text {
+  background: linear-gradient(135deg, #DC2626 0%, #F59E0B 35%, #EF4444 70%, #FBBF24 100%);
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientShift 6s ease infinite;
+}
+
 /* Infinite Marquee */
 @keyframes marqueeScroll {
   0% {
