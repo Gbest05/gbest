@@ -60,11 +60,14 @@ $pageData = $pagesContent['webdev'] ?? [];
                 <?php endforeach; ?>
               </div>
 
-              <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
-                <?php if (!empty($proj['demo_url'])): ?>
-                  <a href="contact.php" class="btn btn-primary btn-sm">
+              <div style="display: flex; gap: 0.75rem; flex-wrap: wrap; align-items: center;">
+                <?php 
+                  $isAccessAllowed = !isset($proj['allow_request_access']) || $proj['allow_request_access'] === true || $proj['allow_request_access'] === '1' || $proj['allow_request_access'] === 1;
+                ?>
+                <?php if ($isAccessAllowed): ?>
+                  <a href="<?php echo htmlspecialchars(!empty($proj['request_access_url']) ? $proj['request_access_url'] : 'contact.php'); ?>" class="btn btn-primary btn-sm">
                     <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                    <span>Request Live Access</span>
+                    <span><?php echo htmlspecialchars(!empty($proj['request_access_label']) ? $proj['request_access_label'] : 'Request Live Access'); ?></span>
                   </a>
                 <?php endif; ?>
 

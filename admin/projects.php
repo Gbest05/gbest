@@ -26,7 +26,7 @@ if ($action === 'edit' && !empty($editId)) {
     }
 }
 
-// Handle Form Submission (Add, Edit, Delete)
+// Handle Form Submission (Add, Edit, Delete, Quick Toggle)
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $postAction = $_POST['post_action'] ?? '';
 
@@ -37,6 +37,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $alertMessage = 'Project deleted successfully.';
             $alertType = 'success';
         }
+    } elseif ($postAction === 'toggle_request_access') {
+        $toggleId = $_POST['project_id'] ?? '';
+        $newState = false;
+        foreach ($projects as &$p) {
+            if ($p['id'] === $toggleId) {
+                $currentState = !isset($p['allow_request_access']) || $p['allow_request_access'] === true || $p['allow_request_access'] === '1' || $p['allow_request_access'] === 1;
+                $p['allow_request_access'] = !$currentState;
+                $newState = $p['allow_request_access'];
+                break;
+            }
+        }
+        unset($p);
+        save_projects($projects);
+        $alertMessage = 'Request Access button for project ' . ($newState ? 'ENABLED (ON)' : 'DISABLED (OFF)') . '.';
+        $alertType = 'success';
     } elseif ($postAction === 'save') {
         $projectId = trim($_POST['project_id'] ?? '');
         $title = trim($_POST['title'] ?? '');
@@ -46,6 +61,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $demoUrl = trim($_POST['demo_url'] ?? '');
         $githubUrl = trim($_POST['github_url'] ?? '');
         $featured = isset($_POST['featured']);
+        $allowRequestAccess = isset($_POST['allow_request_access']);
+        $requestAccessLabel = trim($_POST['request_access_label'] ?? 'Request Live Access');
+        $requestAccessUrl = trim($_POST['request_access_url'] ?? 'contact.php');
 
         $techRaw = trim($_POST['technologies'] ?? '');
         $technologies = array_filter(array_map('trim', explode(',', $techRaw)));
@@ -75,6 +93,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 'demo_url' => $demoUrl,
                 'github_url' => $githubUrl,
                 'featured' => $featured,
+                'allow_request_access' => $allowRequestAccess,
+                'request_access_label' => !empty($requestAccessLabel) ? $requestAccessLabel : 'Request Live Access',
+                'request_access_url' => !empty($requestAccessUrl) ? $requestAccessUrl : 'contact.php',
                 'created_at' => date('Y-m-d')
             ];
             array_unshift($projects, $newProject); // add to top
@@ -92,6 +113,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     $p['demo_url'] = $demoUrl;
                     $p['github_url'] = $githubUrl;
                     $p['featured'] = $featured;
+                    $p['allow_request_access'] = $allowRequestAccess;
+                    $p['request_access_label'] = !empty($requestAccessLabel) ? $requestAccessLabel : 'Request Live Access';
+                    $p['request_access_url'] = !empty($requestAccessUrl) ? $requestAccessUrl : 'contact.php';
                     break;
                 }
             }
@@ -116,7 +140,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1.75rem; flex-wrap: wrap; gap: 1rem;">
   <div>
     <h2 style="font-size: clamp(1.25rem, 3vw, 1.5rem); font-weight: 800; margin-bottom: 0.25rem;">Web &amp; AI Projects (<?php echo count($projects); ?>)</h2>
-    <p style="font-size: 0.875rem; color: var(--text-muted);">Manage full-stack software and deep learning projects displayed across the website.</p>
+    <p style="font-size: 0.875rem; color: var(--text-muted);">Manage web development and deep learning projects, demo links, and visitor request access controls.</p>
   </div>
   <button class="btn btn-primary" onclick="openAdminModal('projectModal')">
     <i class="fa-solid fa-plus"></i>
@@ -132,6 +156,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <tr>
           <th>Preview</th>
           <th>Title &amp; Category</th>
+          <th>Request Access Button</th>
           <th>Tech Stack</th>
           <th>Links</th>
           <th>Date</th>
@@ -141,10 +166,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       <tbody>
         <?php if (empty($projects)): ?>
           <tr>
-            <td colspan="6" style="text-align: center; padding: 2rem; color: var(--text-muted);">No projects found. Click 'Upload New Project' to add your first project.</td>
+            <td colspan="7" style="text-align: center; padding: 2rem; color: var(--text-muted);">No projects found. Click 'Upload New Project' to add your first project.</td>
           </tr>
         <?php else: ?>
           <?php foreach ($projects as $proj): ?>
+            <?php 
+              $isAccessActive = !isset($proj['allow_request_access']) || $proj['allow_request_access'] === true || $proj['allow_request_access'] === '1' || $proj['allow_request_access'] === 1;
+            ?>
             <tr>
               <td>
                 <img src="../<?php echo htmlspecialchars($proj['image']); ?>" alt="<?php echo htmlspecialchars($proj['title']); ?>" class="admin-table-img">
@@ -152,6 +180,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
               <td>
                 <div style="font-weight: 700; color: var(--text-primary);"><?php echo htmlspecialchars($proj['title']); ?></div>
                 <span class="badge-tag" style="font-size: 0.7rem; padding: 0.15rem 0.5rem; margin-top: 4px;"><?php echo htmlspecialchars($proj['category_label'] ?? $proj['category']); ?></span>
+              </td>
+              <td>
+                <!-- 1-Click Quick Toggle for Request Access Button -->
+                <form method="POST" action="projects.php" style="margin: 0; display: inline-block;">
+                  <input type="hidden" name="post_action" value="toggle_request_access">
+                  <input type="hidden" name="project_id" value="<?php echo htmlspecialchars($proj['id']); ?>">
+                  <button type="submit" class="badge-tag" style="cursor: pointer; border-radius: 9999px; font-weight: 600; font-size: 0.72rem; padding: 0.25rem 0.65rem; transition: all 0.2s ease; border: 1px solid <?php echo $isAccessActive ? 'rgba(16, 185, 129, 0.4)' : 'rgba(148, 163, 184, 0.3)'; ?>; background: <?php echo $isAccessActive ? 'rgba(16, 185, 129, 0.14)' : 'rgba(148, 163, 184, 0.12)'; ?>; color: <?php echo $isAccessActive ? '#10B981' : '#94A3B8'; ?>;" title="Click to toggle Request Access button ON/OFF">
+                    <i class="fa-solid <?php echo $isAccessActive ? 'fa-toggle-on' : 'fa-toggle-off'; ?>" style="margin-right: 4px;"></i>
+                    <?php echo $isAccessActive ? 'Access: ON' : 'Access: OFF'; ?>
+                  </button>
+                </form>
               </td>
               <td>
                 <div style="display: flex; flex-wrap: wrap; gap: 4px; max-width: 200px;">
@@ -244,6 +283,34 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       <div class="form-group">
         <label class="form-label">Project Description <span style="color: #EF4444;">*</span></label>
         <textarea name="description" class="form-textarea" placeholder="Detailed project overview, problem solved, and technical architecture..." required><?php echo htmlspecialchars($editProject['description'] ?? ''); ?></textarea>
+      </div>
+
+      <!-- Visitor 'Request Access' Control Panel Box -->
+      <div style="background: var(--bg-surface-elevated); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 1.25rem; margin-bottom: 1.5rem;">
+        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.75rem;">
+          <div>
+            <span style="font-weight: 700; font-size: 0.9375rem; color: var(--text-primary);"><i class="fa-solid fa-lock-open" style="color: var(--accent-cyan); margin-right: 6px;"></i> Visitor 'Request Access' Button</span>
+            <p style="font-size: 0.8125rem; color: var(--text-muted); margin: 0.2rem 0 0 0;">Allow visitors on web development &amp; project pages to see the 'Request Live Access' button.</p>
+          </div>
+          <?php 
+            $editAccessActive = !isset($editProject['allow_request_access']) || $editProject['allow_request_access'] === true || $editProject['allow_request_access'] === '1' || $editProject['allow_request_access'] === 1;
+          ?>
+          <label style="position: relative; display: inline-flex; align-items: center; cursor: pointer;">
+            <input type="checkbox" name="allow_request_access" value="1" <?php echo $editAccessActive ? 'checked' : ''; ?> style="width: 20px; height: 20px; accent-color: var(--accent-cyan); cursor: pointer;">
+            <span style="margin-left: 8px; font-weight: 700; font-size: 0.875rem;">Enabled (ON)</span>
+          </label>
+        </div>
+
+        <div class="admin-form-grid" style="margin-top: 0.75rem;">
+          <div class="form-group" style="margin-bottom: 0;">
+            <label class="form-label" style="font-size: 0.8125rem;">Button Text / Label</label>
+            <input type="text" name="request_access_label" class="form-input" placeholder="e.g. Request Live Access" value="<?php echo htmlspecialchars($editProject['request_access_label'] ?? 'Request Live Access'); ?>">
+          </div>
+          <div class="form-group" style="margin-bottom: 0;">
+            <label class="form-label" style="font-size: 0.8125rem;">Button Destination URL</label>
+            <input type="text" name="request_access_url" class="form-input" placeholder="e.g. contact.php or custom link" value="<?php echo htmlspecialchars($editProject['request_access_url'] ?? 'contact.php'); ?>">
+          </div>
+        </div>
       </div>
 
       <div class="admin-form-grid">

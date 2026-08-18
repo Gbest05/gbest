@@ -59,10 +59,13 @@ $pageData = $pagesContent['projects'] ?? [];
               </div>
 
               <div class="project-actions">
-                <?php if (!empty($proj['demo_url'])): ?>
+                <?php 
+                  $isAccessAllowed = !isset($proj['allow_request_access']) || $proj['allow_request_access'] === true || $proj['allow_request_access'] === '1' || $proj['allow_request_access'] === 1;
+                ?>
+                <?php if (!empty($proj['demo_url']) && $isAccessAllowed): ?>
                   <a href="<?php echo htmlspecialchars($proj['demo_url']); ?>" class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.8125rem;">
                     <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                    <span>View Demo</span>
+                    <span><?php echo htmlspecialchars(!empty($proj['request_access_label']) ? $proj['request_access_label'] : 'View Demo'); ?></span>
                   </a>
                 <?php endif; ?>
 
