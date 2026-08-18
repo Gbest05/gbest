@@ -63,16 +63,20 @@ $pageData = $pagesContent['webdev'] ?? [];
               <div style="display: flex; gap: 0.75rem; flex-wrap: wrap; align-items: center;">
                 <?php 
                   $isAccessAllowed = !isset($proj['allow_request_access']) || $proj['allow_request_access'] === true || $proj['allow_request_access'] === '1' || $proj['allow_request_access'] === 1;
+                  $rawTarget = !empty($proj['demo_url']) ? $proj['demo_url'] : (!empty($proj['request_access_url']) ? $proj['request_access_url'] : 'contact.php');
+                  $targetUrl = format_url($rawTarget);
+                  $isExternal = str_starts_with($targetUrl, 'http://') || str_starts_with($targetUrl, 'https://');
+                  $btnLabel = !empty($proj['request_access_label']) ? $proj['request_access_label'] : ($isExternal ? 'Live Access Server' : 'Request Live Access');
                 ?>
                 <?php if ($isAccessAllowed): ?>
-                  <a href="<?php echo htmlspecialchars(!empty($proj['request_access_url']) ? $proj['request_access_url'] : 'contact.php'); ?>" class="btn btn-primary btn-sm">
+                  <a href="<?php echo htmlspecialchars($targetUrl); ?>" <?php echo $isExternal ? 'target="_blank" rel="noopener noreferrer"' : ''; ?> class="btn btn-primary btn-sm">
                     <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                    <span><?php echo htmlspecialchars(!empty($proj['request_access_label']) ? $proj['request_access_label'] : 'Request Live Access'); ?></span>
+                    <span><?php echo htmlspecialchars($btnLabel); ?></span>
                   </a>
                 <?php endif; ?>
 
                 <?php if (!empty($proj['github_url'])): ?>
-                  <a href="<?php echo htmlspecialchars($proj['github_url']); ?>" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">
+                  <a href="<?php echo htmlspecialchars(format_url($proj['github_url'])); ?>" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">
                     <i class="fa-brands fa-github"></i>
                     <span>View Repository</span>
                   </a>

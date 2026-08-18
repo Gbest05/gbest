@@ -61,16 +61,19 @@ $pageData = $pagesContent['projects'] ?? [];
               <div class="project-actions">
                 <?php 
                   $isAccessAllowed = !isset($proj['allow_request_access']) || $proj['allow_request_access'] === true || $proj['allow_request_access'] === '1' || $proj['allow_request_access'] === 1;
+                  $demoLink = !empty($proj['demo_url']) ? format_url($proj['demo_url']) : '';
+                  $isExternal = str_starts_with($demoLink, 'http://') || str_starts_with($demoLink, 'https://');
+                  $btnLabel = !empty($proj['request_access_label']) ? $proj['request_access_label'] : ($isExternal ? 'Live Access Server' : 'View Demo');
                 ?>
-                <?php if (!empty($proj['demo_url']) && $isAccessAllowed): ?>
-                  <a href="<?php echo htmlspecialchars($proj['demo_url']); ?>" class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.8125rem;">
+                <?php if (!empty($demoLink) && $isAccessAllowed): ?>
+                  <a href="<?php echo htmlspecialchars($demoLink); ?>" <?php echo $isExternal ? 'target="_blank" rel="noopener noreferrer"' : ''; ?> class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.8125rem;">
                     <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                    <span><?php echo htmlspecialchars(!empty($proj['request_access_label']) ? $proj['request_access_label'] : 'View Demo'); ?></span>
+                    <span><?php echo htmlspecialchars($btnLabel); ?></span>
                   </a>
                 <?php endif; ?>
 
                 <?php if (!empty($proj['github_url'])): ?>
-                  <a href="<?php echo htmlspecialchars($proj['github_url']); ?>" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="padding: 0.5rem 1rem; font-size: 0.8125rem;">
+                  <a href="<?php echo htmlspecialchars(format_url($proj['github_url'])); ?>" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="padding: 0.5rem 1rem; font-size: 0.8125rem;">
                     <i class="fa-brands fa-github"></i>
                     <span>Code</span>
                   </a>

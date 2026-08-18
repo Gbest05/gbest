@@ -242,3 +242,23 @@ function save_pages_content(array $data): bool {
         json_encode($data, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE)
     );
 }
+
+// --------------------------------------------------------------------------
+// 7. URL Sanitizer & Formatter
+// --------------------------------------------------------------------------
+function format_url(?string $url): string {
+    if (empty($url)) {
+        return '';
+    }
+    $url = trim($url);
+    if (str_starts_with($url, '#') || str_starts_with($url, 'mailto:') || str_starts_with($url, 'tel:') || str_starts_with($url, 'javascript:')) {
+        return $url;
+    }
+    if (str_ends_with(strtolower($url), '.php') && !str_contains($url, '://')) {
+        return $url;
+    }
+    if (!preg_match('#^[a-zA-Z][a-zA-Z0-9+.-]*://#', $url)) {
+        return 'https://' . $url;
+    }
+    return $url;
+}

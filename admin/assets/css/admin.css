@@ -183,6 +183,60 @@
   justify-content: space-between;
 }
 
+.admin-sidebar-header .brand-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  text-decoration: none;
+}
+
+.admin-sidebar-header .brand-icon-box {
+  width: 36px;
+  height: 36px;
+  background: var(--grad-primary);
+  border-radius: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF;
+  font-weight: 800;
+  font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 0.95rem;
+  letter-spacing: -0.02em;
+  box-shadow: 0 3px 10px rgba(139, 92, 246, 0.35);
+  flex-shrink: 0;
+}
+
+.admin-sidebar-header .brand-text-wrap {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.15;
+}
+
+.admin-sidebar-header .brand-name {
+  font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+  display: flex;
+  align-items: center;
+  gap: 0.1rem;
+}
+
+.admin-sidebar-header .brand-name span {
+  color: var(--accent-cyan);
+}
+
+.admin-sidebar-header .brand-tagline {
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-family: var(--font-body);
+}
+
 .admin-sidebar-close-btn {
   display: none;
   background: transparent;
