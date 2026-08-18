@@ -33,6 +33,18 @@ $activeAdminNav = $activeAdminNav ?? 'dashboard';
   <link rel="stylesheet" href="../assets/css/style.css">
   <link rel="stylesheet" href="../assets/css/animations.css">
   <link rel="stylesheet" href="assets/css/admin.css">
+
+  <!-- Anti-flash Theme Initializer -->
+  <script>
+    (function(){
+      var t = localStorage.getItem('gbest_theme_preference');
+      if (t === 'light' || (!t && window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches)) {
+        document.documentElement.setAttribute('data-theme', 'light');
+      } else {
+        document.documentElement.removeAttribute('data-theme');
+      }
+    })();
+  </script>
 </head>
 <body class="admin-body">
   <!-- Mobile Sidebar Backdrop Overlay -->
@@ -63,27 +75,27 @@ $activeAdminNav = $activeAdminNav ?? 'dashboard';
           </a>
         </li>
         <li>
-          <a href="pages.php" class="admin-nav-link <?php echo $activeAdminNav === 'pages' ? 'active' : ''; ?>">
-            <i class="fa-solid fa-file-lines"></i>
-            <span>Page Content &amp; Hero CMS</span>
-          </a>
-        </li>
-        <li>
-          <a href="settings.php" class="admin-nav-link <?php echo $activeAdminNav === 'settings' ? 'active' : ''; ?>">
-            <i class="fa-solid fa-sliders"></i>
-            <span>Site &amp; Landing Settings</span>
-          </a>
-        </li>
-        <li>
           <a href="projects.php" class="admin-nav-link <?php echo $activeAdminNav === 'projects' ? 'active' : ''; ?>">
             <i class="fa-solid fa-laptop-code"></i>
-            <span>Manage Web &amp; AI Projects</span>
+            <span>Web &amp; AI Projects</span>
           </a>
         </li>
         <li>
           <a href="graphics.php" class="admin-nav-link <?php echo $activeAdminNav === 'graphics' ? 'active' : ''; ?>">
             <i class="fa-solid fa-palette"></i>
-            <span>Manage Graphics Work</span>
+            <span>Graphics Artworks</span>
+          </a>
+        </li>
+        <li>
+          <a href="pages.php" class="admin-nav-link <?php echo $activeAdminNav === 'pages' ? 'active' : ''; ?>">
+            <i class="fa-solid fa-file-lines"></i>
+            <span>Pages Content</span>
+          </a>
+        </li>
+        <li>
+          <a href="settings.php" class="admin-nav-link <?php echo $activeAdminNav === 'settings' ? 'active' : ''; ?>">
+            <i class="fa-solid fa-sliders"></i>
+            <span>Brand &amp; Settings</span>
           </a>
         </li>
         <li>
@@ -128,6 +140,28 @@ $activeAdminNav = $activeAdminNav ?? 'dashboard';
         </div>
 
         <div class="admin-topbar-actions">
+          <!-- Theme Toggle Button -->
+          <button class="theme-toggle-btn" aria-label="Toggle Color Theme" title="Toggle Light/Dark Theme">
+            <!-- Moon Icon (Dark Mode) -->
+            <svg class="theme-icon-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
+              <path d="M19 3v4"></path>
+              <path d="M21 5h-4"></path>
+            </svg>
+            <!-- Sun Icon (Light Mode) -->
+            <svg class="theme-icon-sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="4"></circle>
+              <path d="M12 2v2"></path>
+              <path d="M12 20v2"></path>
+              <path d="m4.93 4.93 1.41 1.41"></path>
+              <path d="m17.66 17.66 1.41 1.41"></path>
+              <path d="M2 12h2"></path>
+              <path d="M20 12h2"></path>
+              <path d="m6.34 17.66-1.41 1.41"></path>
+              <path d="m19.07 4.93-1.41 1.41"></path>
+            </svg>
+          </button>
+
           <a href="../index.php" target="_blank" class="btn btn-secondary btn-sm" title="View Public Website">
             <i class="fa-solid fa-arrow-up-right-from-square"></i>
             <span class="admin-btn-label">View Live Site</span>

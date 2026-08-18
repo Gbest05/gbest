@@ -714,3 +714,99 @@
     padding: 1.75rem 1.15rem;
   }
 }
+
+/* ==========================================================================
+   ADMIN LIGHT THEME ENHANCEMENTS
+   ========================================================================== */
+[data-theme="light"] .admin-body,
+[data-theme="light"] .admin-main {
+  background: #F8FAFC;
+  color: #0F172A;
+}
+
+[data-theme="light"] .admin-sidebar {
+  background: #FFFFFF;
+  border-right: 1px solid rgba(15, 23, 42, 0.08);
+}
+
+[data-theme="light"] .admin-sidebar-header {
+  border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+}
+
+[data-theme="light"] .admin-sidebar-footer {
+  background: #FFFFFF;
+  border-top: 1px solid rgba(15, 23, 42, 0.08);
+}
+
+[data-theme="light"] .admin-nav-link {
+  color: #475569;
+}
+
+[data-theme="light"] .admin-nav-link:hover {
+  color: #0F172A;
+  background: #F1F5F9;
+}
+
+[data-theme="light"] .admin-topbar {
+  background: rgba(255, 255, 255, 0.92);
+  border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+}
+
+[data-theme="light"] .admin-card {
+  background: #FFFFFF;
+  border-color: rgba(15, 23, 42, 0.08);
+  box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.05);
+}
+
+[data-theme="light"] .admin-card-header {
+  border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+}
+
+[data-theme="light"] .admin-stat-box {
+  background: #FFFFFF;
+  border-color: rgba(15, 23, 42, 0.08);
+  box-shadow: 0 4px 16px -2px rgba(15, 23, 42, 0.05);
+}
+
+[data-theme="light"] .admin-stat-count {
+  color: #0F172A;
+}
+
+[data-theme="light"] .admin-stat-label {
+  color: #64748B;
+}
+
+[data-theme="light"] .admin-table th {
+  background: #F8FAFC;
+  color: #334155;
+  border-bottom: 1px solid rgba(15, 23, 42, 0.1);
+}
+
+[data-theme="light"] .admin-table td {
+  border-bottom: 1px solid rgba(15, 23, 42, 0.06);
+  color: #1E293B;
+}
+
+[data-theme="light"] .admin-table tr:hover td {
+  background: #F8FAFC;
+}
+
+[data-theme="light"] .admin-modal-card {
+  background: #FFFFFF;
+  border: 1px solid rgba(15, 23, 42, 0.1);
+  box-shadow: 0 25px 50px -12px rgba(15, 23, 42, 0.2);
+}
+
+[data-theme="light"] .admin-login-card {
+  background: #FFFFFF;
+  border: 1px solid rgba(15, 23, 42, 0.1);
+  box-shadow: 0 20px 45px -10px rgba(15, 23, 42, 0.12);
+}
+
+[data-theme="light"] .form-input,
+[data-theme="light"] .form-select,
+[data-theme="light"] .form-textarea {
+  background: #FFFFFF;
+  border-color: rgba(15, 23, 42, 0.15);
+  color: #0F172A;
+}
