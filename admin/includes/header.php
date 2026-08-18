@@ -14,7 +14,7 @@ $adminUser = get_admin_user();
 $activeAdminNav = $activeAdminNav ?? 'dashboard';
 ?>
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -34,17 +34,8 @@ $activeAdminNav = $activeAdminNav ?? 'dashboard';
   <link rel="stylesheet" href="../assets/css/animations.css">
   <link rel="stylesheet" href="assets/css/admin.css">
 
-  <!-- Anti-flash Theme Initializer -->
-  <script>
-    (function(){
-      var t = localStorage.getItem('gbest_theme_preference');
-      if (t === 'light' || (!t && window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches)) {
-        document.documentElement.setAttribute('data-theme', 'light');
-      } else {
-        document.documentElement.removeAttribute('data-theme');
-      }
-    })();
-  </script>
+  <!-- Global Theme Toggle Engine -->
+  <script src="../assets/js/theme.js"></script>
 </head>
 <body class="admin-body">
   <!-- Mobile Sidebar Backdrop Overlay -->
@@ -141,10 +132,10 @@ $activeAdminNav = $activeAdminNav ?? 'dashboard';
 
         <div class="admin-topbar-actions">
           <!-- Theme Toggle Button -->
-          <button class="theme-toggle-btn" aria-label="Toggle Color Theme" title="Toggle Light/Dark Theme">
+          <button type="button" id="adminThemeToggle" class="theme-toggle-btn" onclick="window.toggleTheme ? window.toggleTheme() : null" aria-label="Toggle Color Theme" title="Toggle Light/Dark Theme">
             <!-- Moon Icon (Dark Mode) -->
             <svg class="theme-icon-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
+              <path d="M12 3a6 6 0 0 0 9 9 9 0 1 1-9-9Z"></path>
               <path d="M19 3v4"></path>
               <path d="M21 5h-4"></path>
             </svg>
