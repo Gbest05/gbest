@@ -479,7 +479,7 @@ button, input, textarea, select {
   background-position: center center;
   background-repeat: no-repeat;
   overflow: hidden;
-  border-bottom: 1px solid var(--border-color);
+  border-bottom: none;
 }
 
 .page-hero-banner::before {
@@ -501,7 +501,7 @@ button, input, textarea, select {
 
 [data-theme="light"] .page-hero-banner {
   background-color: #F8FAFC;
-  border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+  border-bottom: none;
 }
 
 .page-hero-banner .container {
