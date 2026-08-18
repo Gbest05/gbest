@@ -189,21 +189,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </div>
 
     <div class="admin-form-grid" style="margin-top: 1rem;">
-      <div class="form-group">
+      <div class="form-group" style="min-width: 0;">
         <label class="form-label">Profile Avatar Image</label>
         <input type="file" name="profile_image_file" class="form-input" accept="image/*" data-preview="profilePreviewImg">
-        <div style="margin-top: 0.75rem; display: flex; align-items: center; gap: 1rem;">
-          <img id="profilePreviewImg" src="../<?php echo htmlspecialchars($siteConfig['profile_image']); ?>" alt="Current Profile" style="width: 70px; height: 70px; border-radius: var(--radius-md); object-fit: cover; border: 1px solid var(--border-color);">
-          <small style="color: var(--text-muted);">Current: <?php echo htmlspecialchars($siteConfig['profile_image']); ?></small>
+        <div style="margin-top: 0.75rem; display: flex; align-items: center; gap: 0.85rem; min-width: 0; flex-wrap: wrap;">
+          <img id="profilePreviewImg" src="../<?php echo htmlspecialchars($siteConfig['profile_image']); ?>" alt="Current Profile" style="width: 60px; height: 60px; border-radius: var(--radius-md); object-fit: cover; border: 1px solid var(--border-color); flex-shrink: 0;">
+          <small style="color: var(--text-muted); font-size: 0.75rem; word-break: break-all; min-width: 0; flex: 1 1 180px;">Current: <code><?php echo htmlspecialchars($siteConfig['profile_image']); ?></code></small>
         </div>
       </div>
 
-      <div class="form-group">
+      <div class="form-group" style="min-width: 0;">
         <label class="form-label">Favicon / Logo Image</label>
         <input type="file" name="logo_image_file" class="form-input" accept="image/*" data-preview="logoPreviewImg">
-        <div style="margin-top: 0.75rem; display: flex; align-items: center; gap: 1rem;">
-          <img id="logoPreviewImg" src="../<?php echo htmlspecialchars($siteConfig['logo_image']); ?>" alt="Current Logo" style="width: 50px; height: 50px; border-radius: 8px; object-fit: contain; border: 1px solid var(--border-color);">
-          <small style="color: var(--text-muted);">Current: <?php echo htmlspecialchars($siteConfig['logo_image']); ?></small>
+        <div style="margin-top: 0.75rem; display: flex; align-items: center; gap: 0.85rem; min-width: 0; flex-wrap: wrap;">
+          <img id="logoPreviewImg" src="../<?php echo htmlspecialchars($siteConfig['logo_image']); ?>" alt="Current Logo" style="width: 45px; height: 45px; border-radius: 8px; object-fit: contain; border: 1px solid var(--border-color); flex-shrink: 0;">
+          <small style="color: var(--text-muted); font-size: 0.75rem; word-break: break-all; min-width: 0; flex: 1 1 180px;">Current: <code><?php echo htmlspecialchars($siteConfig['logo_image']); ?></code></small>
         </div>
       </div>
     </div>

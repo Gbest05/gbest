@@ -62,25 +62,25 @@ $messages = get_messages();
         </div>
       </div>
 
-      <div>
+      <div style="min-width: 0; flex: 1 1 240px; overflow-wrap: break-word; word-wrap: break-word;">
         <div style="display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;">
-          <h2 style="font-size: clamp(1.25rem, 3vw, 1.5rem); font-weight: 800; margin: 0; color: var(--text-primary);"><?php echo htmlspecialchars($siteConfig['owner_name']); ?></h2>
+          <h2 style="font-size: clamp(1.15rem, 3vw, 1.5rem); font-weight: 800; margin: 0; color: var(--text-primary);"><?php echo htmlspecialchars($siteConfig['owner_name']); ?></h2>
           <span class="badge-tag" style="font-size: 0.6875rem; padding: 0.15rem 0.55rem; margin: 0;">Super Administrator</span>
         </div>
-        <p style="font-size: 0.875rem; color: var(--text-secondary); margin: 0.25rem 0 0.5rem 0;"><?php echo htmlspecialchars($siteConfig['professional_title']); ?></p>
-        <span style="font-size: 0.75rem; color: var(--text-muted);"><i class="fa-solid fa-camera" style="margin-right: 4px;"></i> Current Avatar: <code><?php echo htmlspecialchars($siteConfig['profile_image']); ?></code></span>
+        <p style="font-size: 0.8125rem; color: var(--text-secondary); margin: 0.25rem 0 0.5rem 0; word-break: break-word;"><?php echo htmlspecialchars($siteConfig['professional_title']); ?></p>
+        <span style="font-size: 0.72rem; color: var(--text-muted); word-break: break-all; display: inline-block; max-width: 100%;"><i class="fa-solid fa-camera" style="margin-right: 4px;"></i> Current Avatar: <code style="word-break: break-all;"><?php echo htmlspecialchars($siteConfig['profile_image']); ?></code></span>
       </div>
     </div>
 
     <!-- Quick Photo Upload Form -->
-    <div style="background: var(--bg-surface); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 1rem 1.25rem; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
-      <form method="POST" action="index.php" enctype="multipart/form-data" style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
+    <div style="background: var(--bg-surface); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 1rem 1.25rem; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); width: 100%; max-width: 100%; box-sizing: border-box;">
+      <form method="POST" action="index.php" enctype="multipart/form-data" style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap; width: 100%;">
         <input type="hidden" name="action" value="quick_upload_profile">
-        <div>
+        <div style="flex: 1 1 180px; min-width: 0;">
           <label class="form-label" style="font-size: 0.8125rem; margin-bottom: 0.35rem; display: block;">
             <i class="fa-solid fa-cloud-arrow-up" style="color: var(--accent-cyan); margin-right: 4px;"></i> <strong>Upload New Profile Picture</strong>
           </label>
-          <input type="file" name="profile_avatar" class="form-input" accept="image/*" required style="padding: 0.35rem 0.6rem; font-size: 0.8125rem; max-width: 240px;">
+          <input type="file" name="profile_avatar" class="form-input" accept="image/*" required style="padding: 0.35rem 0.6rem; font-size: 0.8125rem; width: 100%; max-width: 100%; box-sizing: border-box;">
         </div>
         <button type="submit" class="btn btn-primary btn-sm" style="align-self: flex-end; height: 38px;">
           <i class="fa-solid fa-upload"></i>
