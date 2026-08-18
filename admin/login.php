@@ -81,12 +81,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <form method="POST" action="login.php" class="admin-login-form">
       <div class="form-group">
         <label for="username" class="form-label"><i class="fa-solid fa-user" style="margin-right: 6px; color: var(--accent-cyan);"></i> Email or Username</label>
-        <input type="text" id="username" name="username" class="form-input" placeholder="Gbestdev05@gmail.com" required autofocus value="<?php echo htmlspecialchars($_POST['username'] ?? ''); ?>" style="padding: 0.65rem 0.95rem;">
+        <input type="text" id="username" name="username" class="form-input" placeholder="Enter your email or username" required autofocus value="<?php echo htmlspecialchars($_POST['username'] ?? ''); ?>" style="padding: 0.65rem 0.95rem;">
       </div>
 
       <div class="form-group">
         <label for="password" class="form-label"><i class="fa-solid fa-key" style="margin-right: 6px; color: var(--accent-purple);"></i> Password</label>
-        <input type="password" id="password" name="password" class="form-input" placeholder="••••••••" required style="padding: 0.65rem 0.95rem;">
+        <input type="password" id="password" name="password" class="form-input" placeholder="Enter your password" required style="padding: 0.65rem 0.95rem;">
       </div>
 
       <button type="submit" class="btn btn-primary" style="width: 100%; padding: 0.75rem; font-size: 0.9375rem; margin-top: 0.5rem; min-height: 42px;">
@@ -100,9 +100,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <i class="fa-solid fa-arrow-left"></i>
         <span>Return to Live Portfolio</span>
       </a>
-      <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.65rem;">
-        Default credentials: <strong>admin</strong> / <strong>admin123</strong>
-      </div>
     </div>
   </div>
 </body>
