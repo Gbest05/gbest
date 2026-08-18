@@ -128,7 +128,7 @@ $messages = get_messages();
       <i class="fa-solid fa-circle-check"></i>
     </div>
     <div>
-      <div class="admin-stat-count" style="font-size: 1.35rem; color: var(--accent-emerald);">Online</div>
+      <div class="admin-stat-count" style="color: var(--accent-emerald);">Online</div>
       <div class="admin-stat-label">Live CMS Status</div>
     </div>
   </div>
