@@ -32,7 +32,7 @@ $gfxData = $pagesContent['graphics'] ?? [];
           </div>
 
           <h1 class="hero-title">
-            <?php echo htmlspecialchars($homeData['title_prefix'] ?? $siteConfig['hero_title_prefix']); ?> <span class="animated-gradient-text"><?php echo htmlspecialchars($homeData['title_name'] ?? $siteConfig['owner_name']); ?></span>
+            <span class="hero-title-prefix"><?php echo htmlspecialchars($homeData['title_prefix'] ?? $siteConfig['hero_title_prefix']); ?></span> <span class="animated-gradient-text"><?php echo htmlspecialchars($homeData['title_name'] ?? $siteConfig['owner_name']); ?></span>
           </h1>
 
           <!-- Hero Typewriter Animation -->

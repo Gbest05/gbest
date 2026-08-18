@@ -727,6 +727,17 @@ button, input, textarea, select {
   line-height: 1.12;
   margin-bottom: 1.25rem;
   letter-spacing: -0.03em;
+  color: #FFFFFF;
+}
+
+.hero-title-prefix {
+  color: #FFFFFF !important;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+}
+
+[data-theme="light"] .hero-title-prefix {
+  color: #FFFFFF !important;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
 }
 
 .hero-typewriter-container {
