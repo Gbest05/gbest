@@ -1,7 +1,7 @@
 /**
  * GBEST / GBTech - Global Theme Toggle Engine
- * Modern theme switcher supporting Dark (Default) & Light modes
- * Persists choice via localStorage and syncs across all pages.
+ * Ultra-reliable theme switcher supporting Dark (Default) & Light modes
+ * Persists choice via localStorage and synchronizes across all pages.
  */
 
 (function () {
@@ -9,6 +9,7 @@
 
   const STORAGE_KEY = 'gbest_theme_preference';
   const htmlRoot = document.documentElement;
+  let lastToggleTimestamp = 0;
 
   function getInitialTheme() {
     try {
@@ -26,14 +27,16 @@
   function applyTheme(theme) {
     if (theme === 'light') {
       htmlRoot.setAttribute('data-theme', 'light');
+      if (document.body) document.body.setAttribute('data-theme', 'light');
     } else {
       htmlRoot.removeAttribute('data-theme');
+      if (document.body) document.body.removeAttribute('data-theme');
     }
     try {
       localStorage.setItem(STORAGE_KEY, theme);
     } catch (e) {}
 
-    // Update all theme toggle buttons accessibility attributes
+    // Update button attributes
     const buttons = document.querySelectorAll('.theme-toggle-btn, #themeToggleBtn, #adminThemeToggle, #loginThemeToggle');
     buttons.forEach(function (btn) {
       btn.setAttribute('aria-label', theme === 'light' ? 'Switch to Dark Mode' : 'Switch to Light Mode');
@@ -41,8 +44,17 @@
     });
   }
 
-  // Expose toggleTheme globally
-  window.toggleTheme = function () {
+  // Globally exposed toggle function with anti-bounce protection
+  window.toggleTheme = function (e) {
+    if (e && e.preventDefault) e.preventDefault();
+    if (e && e.stopPropagation) e.stopPropagation();
+
+    const now = Date.now();
+    if (now - lastToggleTimestamp < 250) {
+      return htmlRoot.getAttribute('data-theme') || 'dark';
+    }
+    lastToggleTimestamp = now;
+
     const isLight = htmlRoot.getAttribute('data-theme') === 'light';
     const nextTheme = isLight ? 'dark' : 'light';
     applyTheme(nextTheme);
@@ -52,38 +64,39 @@
   // Expose applyTheme globally
   window.applyTheme = applyTheme;
 
-  // Initialize theme immediately
+  // Initialize theme immediately on script load
   const initialTheme = getInitialTheme();
   applyTheme(initialTheme);
 
-  // Prevent multiple listener bindings if script is loaded multiple times
-  if (!window.__GBEST_THEME_BOUND__) {
-    window.__GBEST_THEME_BOUND__ = true;
+  // Bind click event listeners when DOM is ready or immediately
+  function attachThemeListeners() {
+    applyTheme(getInitialTheme());
 
-    // Single document-level click listener using event delegation
-    document.addEventListener('click', function (e) {
-      const toggleBtn = e.target.closest('.theme-toggle-btn, #themeToggleBtn, #adminThemeToggle, #loginThemeToggle');
-      if (toggleBtn) {
-        e.preventDefault();
-        e.stopPropagation();
-        window.toggleTheme();
+    const buttons = document.querySelectorAll('.theme-toggle-btn, #themeToggleBtn, #adminThemeToggle, #loginThemeToggle');
+    buttons.forEach(function (btn) {
+      if (!btn.dataset.themeBound) {
+        btn.dataset.themeBound = 'true';
+        btn.onclick = function (e) {
+          window.toggleTheme(e);
+        };
       }
     });
+  }
 
-    // Sync button attributes on DOMContentLoaded
-    document.addEventListener('DOMContentLoaded', function () {
-      applyTheme(getInitialTheme());
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', attachThemeListeners);
+  } else {
+    attachThemeListeners();
+  }
+
+  // Listen for OS theme changes
+  if (window.matchMedia) {
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function (e) {
+      try {
+        if (!localStorage.getItem(STORAGE_KEY)) {
+          applyTheme(e.matches ? 'dark' : 'light');
+        }
+      } catch (err) {}
     });
-
-    // Listen for OS theme changes
-    if (window.matchMedia) {
-      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function (e) {
-        try {
-          if (!localStorage.getItem(STORAGE_KEY)) {
-            applyTheme(e.matches ? 'dark' : 'light');
-          }
-        } catch (err) {}
-      });
-    }
   }
 })();

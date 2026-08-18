@@ -19,7 +19,7 @@ $pageData = $pagesContent['about'] ?? [];
     <div class="container text-center" style="text-align: center;">
       <span class="badge-tag"><?php echo htmlspecialchars($pageData['badge'] ?? 'Who I Am'); ?></span>
       <h1 class="section-title" style="font-size: clamp(2rem, 5vw, 3rem); margin-top: 0.5rem;">
-        <span class="animated-gradient-text"><?php echo htmlspecialchars($pageData['title'] ?? 'About Gbolahan Alade'); ?></span>
+        <span class="animated-gradient-text"><?php echo htmlspecialchars($pageData['title'] ?? 'About Gbest Tech'); ?></span>
       </h1>
       <p class="section-subtitle" style="max-width: 680px; margin: 0 auto;">
         <?php echo htmlspecialchars($pageData['subtitle'] ?? 'Creative Technologist uniting visual brand design, full-stack software development, and artificial intelligence.'); ?>

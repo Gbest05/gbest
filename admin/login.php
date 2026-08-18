@@ -66,7 +66,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <body class="admin-login-body">
   <!-- Top Right Theme Toggle in Login View -->
   <div style="position: absolute; top: 1.25rem; right: 1.25rem; z-index: 10;">
-    <button type="button" id="loginThemeToggle" class="theme-toggle-btn" onclick="window.toggleTheme ? window.toggleTheme() : null" aria-label="Toggle Color Theme" title="Toggle Light/Dark Theme">
+    <button type="button" id="loginThemeToggle" class="theme-toggle-btn" aria-label="Toggle Color Theme" title="Toggle Light/Dark Theme">
       <!-- Moon Icon (Dark Mode) -->
       <svg class="theme-icon-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
