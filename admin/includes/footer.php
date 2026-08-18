@@ -2,7 +2,6 @@
     </div>
   </div>
 
-  <script src="../assets/js/theme.js"></script>
-  <script src="assets/js/admin.js"></script>
+  <script src="assets/js/admin.js?v=<?php echo time(); ?>"></script>
 </body>
 </html>

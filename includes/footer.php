@@ -90,13 +90,12 @@ $siteConfig = $siteConfig ?? get_site_config();
   <div id="toastContainer" class="toast-container" aria-live="assertive"></div>
 
   <!-- JavaScript Modules -->
-  <script src="assets/js/theme.js"></script>
-  <script src="assets/js/typewriter.js"></script>
-  <script src="assets/js/counters.js"></script>
-  <script src="assets/js/portfolio.js"></script>
-  <script src="assets/js/testimonials.js"></script>
-  <script src="assets/js/ai-interactive.js"></script>
-  <script src="assets/js/contact.js"></script>
-  <script src="assets/js/main.js"></script>
+  <script src="assets/js/typewriter.js?v=<?php echo time(); ?>"></script>
+  <script src="assets/js/counters.js?v=<?php echo time(); ?>"></script>
+  <script src="assets/js/portfolio.js?v=<?php echo time(); ?>"></script>
+  <script src="assets/js/testimonials.js?v=<?php echo time(); ?>"></script>
+  <script src="assets/js/ai-interactive.js?v=<?php echo time(); ?>"></script>
+  <script src="assets/js/contact.js?v=<?php echo time(); ?>"></script>
+  <script src="assets/js/main.js?v=<?php echo time(); ?>"></script>
 </body>
 </html>

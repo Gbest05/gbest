@@ -34,7 +34,7 @@
     } catch (e) {}
 
     // Update all theme toggle buttons accessibility attributes
-    const buttons = document.querySelectorAll('.theme-toggle-btn, #themeToggleBtn, #adminThemeToggle');
+    const buttons = document.querySelectorAll('.theme-toggle-btn, #themeToggleBtn, #adminThemeToggle, #loginThemeToggle');
     buttons.forEach(function (btn) {
       btn.setAttribute('aria-label', theme === 'light' ? 'Switch to Dark Mode' : 'Switch to Light Mode');
       btn.setAttribute('title', theme === 'light' ? 'Switch to Dark Mode' : 'Switch to Light Mode');
@@ -56,28 +56,34 @@
   const initialTheme = getInitialTheme();
   applyTheme(initialTheme);
 
-  // Bind click event listeners via document-level event delegation
-  document.addEventListener('click', function (e) {
-    const toggleBtn = e.target.closest('.theme-toggle-btn, #themeToggleBtn, #adminThemeToggle');
-    if (toggleBtn) {
-      e.preventDefault();
-      window.toggleTheme();
-    }
-  });
+  // Prevent multiple listener bindings if script is loaded multiple times
+  if (!window.__GBEST_THEME_BOUND__) {
+    window.__GBEST_THEME_BOUND__ = true;
 
-  // Also bind when DOM is ready
-  document.addEventListener('DOMContentLoaded', function () {
-    applyTheme(getInitialTheme());
-  });
-
-  // Listen for OS theme changes
-  if (window.matchMedia) {
-    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function (e) {
-      try {
-        if (!localStorage.getItem(STORAGE_KEY)) {
-          applyTheme(e.matches ? 'dark' : 'light');
-        }
-      } catch (err) {}
+    // Single document-level click listener using event delegation
+    document.addEventListener('click', function (e) {
+      const toggleBtn = e.target.closest('.theme-toggle-btn, #themeToggleBtn, #adminThemeToggle, #loginThemeToggle');
+      if (toggleBtn) {
+        e.preventDefault();
+        e.stopPropagation();
+        window.toggleTheme();
+      }
     });
+
+    // Sync button attributes on DOMContentLoaded
+    document.addEventListener('DOMContentLoaded', function () {
+      applyTheme(getInitialTheme());
+    });
+
+    // Listen for OS theme changes
+    if (window.matchMedia) {
+      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function (e) {
+        try {
+          if (!localStorage.getItem(STORAGE_KEY)) {
+            applyTheme(e.matches ? 'dark' : 'light');
+          }
+        } catch (err) {}
+      });
+    }
   }
 })();

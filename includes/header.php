@@ -97,7 +97,7 @@ $pageDescription = $pageDescription ?? ($siteConfig['tagline'] . ' ' . $siteConf
         <!-- Nav Right Actions -->
         <div class="nav-actions">
           <!-- Modern Theme Toggle with Lucide-style SVG Icons -->
-          <button id="themeToggleBtn" class="theme-toggle-btn" aria-label="Toggle Color Theme" title="Toggle Light/Dark Theme">
+          <button type="button" id="themeToggleBtn" class="theme-toggle-btn" onclick="window.toggleTheme ? window.toggleTheme() : null" aria-label="Toggle Color Theme" title="Toggle Light/Dark Theme">
             <!-- Moon Icon (Dark Mode) -->
             <svg class="theme-icon-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
