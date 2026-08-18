@@ -474,34 +474,34 @@ button, input, textarea, select {
 .page-hero-banner {
   position: relative;
   padding-top: clamp(4.5rem, 8vw, 5.75rem);
-  padding-bottom: clamp(2rem, 5vw, 3.25rem);
+  padding-bottom: clamp(2.5rem, 6vw, 4rem);
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
   overflow: hidden;
-  border-bottom: none;
+  border-bottom: none !important;
 }
 
 .page-hero-banner::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(8, 11, 18, 0.72) 0%, rgba(8, 11, 18, 0.88) 100%);
+  background: linear-gradient(180deg, rgba(8, 11, 18, 0.72) 0%, rgba(8, 11, 18, 0.88) 75%, var(--bg-body) 100%);
   backdrop-filter: blur(2px);
   -webkit-backdrop-filter: blur(2px);
   z-index: 1;
   pointer-events: none;
 }
 
-[data-theme="light"] .page-hero-banner::before {
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.88) 0%, rgba(248, 250, 252, 0.97) 100%);
-  backdrop-filter: blur(1px);
-  -webkit-backdrop-filter: blur(1px);
-}
-
 [data-theme="light"] .page-hero-banner {
   background-color: #F8FAFC;
-  border-bottom: none;
+  border-bottom: none !important;
+}
+
+[data-theme="light"] .page-hero-banner::before {
+  background: linear-gradient(180deg, rgba(248, 250, 252, 0.82) 0%, rgba(248, 250, 252, 0.92) 65%, #F8FAFC 100%);
+  backdrop-filter: blur(1px);
+  -webkit-backdrop-filter: blur(1px);
 }
 
 .page-hero-banner .container {
@@ -667,6 +667,13 @@ button, input, textarea, select {
     linear-gradient(180deg, rgba(8, 11, 18, 0.82) 0%, var(--bg-body) 100%);
   z-index: 1;
   pointer-events: none;
+}
+
+[data-theme="light"] .hero-bg-overlay {
+  background-image: 
+    radial-gradient(circle at 15% 20%, rgba(139, 92, 246, 0.08) 0%, transparent 45%),
+    radial-gradient(circle at 85% 65%, rgba(6, 182, 212, 0.08) 0%, transparent 45%),
+    linear-gradient(180deg, rgba(248, 250, 252, 0.82) 0%, rgba(248, 250, 252, 0.92) 65%, #F8FAFC 100%);
 }
 
 .hero-grid-pattern {
